@@ -1,0 +1,359 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>Concorde localcut.h functions</title>
+</head>
+<body>
+<center><h1>Concorde localcut.h functions</h1></center>
+<h2><a href="concorde_org.html">Organizational index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_funcs.html">Function index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_prog.html">Program index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_macro.html">Macro index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_types.html">Data Types index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+</h2><a NAME="CCchunk_lift"></a>
+<h2>CCchunk_lift</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/lift.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCchunk_lift&nbsp;(CCchunk_graph&nbsp;*c,&nbsp;CCchunk_fault&nbsp;*fault,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;CCchunk_lift_timer&nbsp;*timer,&nbsp;CCchunk_cut_callback&nbsp;*callback)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_ineq_to_lpcut_in"></a>
+<h2>CCchunk_ineq_to_lpcut_in</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/lift.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCchunk_ineq_to_lpcut_in&nbsp;(int&nbsp;ncount,&nbsp;int&nbsp;ecount,&nbsp;int&nbsp;*elist,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*ecoef,&nbsp;int&nbsp;rhs,&nbsp;CCtsp_lpcut_in&nbsp;*c)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_ineq_to_cut"></a>
+<h2>CCchunk_ineq_to_cut</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/lift.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCchunk_ineq_to_cut&nbsp;(int&nbsp;ncount,&nbsp;int&nbsp;ecount,&nbsp;int&nbsp;*elist,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*ecoef,&nbsp;int&nbsp;rhs,&nbsp;int&nbsp;outside,&nbsp;CCchunk_cut_callback&nbsp;*callback)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_finder"></a>
+<h2>CCchunk_finder</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/chunks.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCchunk_finder&nbsp;(int&nbsp;ncount,&nbsp;int&nbsp;ecount,&nbsp;int&nbsp;*elist,&nbsp;double&nbsp;*elen,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;double&nbsp;eps,&nbsp;CCchunk_flag&nbsp;flags,&nbsp;CCchunk_find_timer&nbsp;*timer,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;CCchunk_chunk_callback&nbsp;*callback,&nbsp;CCrandstate&nbsp;*rstate),</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_oracle"></a>
+<h2>CCchunk_oracle</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/tsporacl.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCchunk_oracle&nbsp;(CCchunk_graph&nbsp;*ch,&nbsp;CCchunk_ineq&nbsp;*c,&nbsp;int&nbsp;*xsol,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*objval,&nbsp;int&nbsp;rhsvalid,&nbsp;int&nbsp;effort_limit,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;CCchunk_oracle_timer&nbsp;*timer)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_verify"></a>
+<h2>CCchunk_verify</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/tsporacl.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCchunk_verify&nbsp;(CCchunk_graph&nbsp;*ch,&nbsp;CCchunk_ineq&nbsp;*c)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_separate"></a>
+<h2>CCchunk_separate</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/first.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCchunk_separate&nbsp;(CCchunk_graph&nbsp;*chunk,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;CCchunk_separate_timer&nbsp;*timer,&nbsp;CCchunk_fault_callback&nbsp;*callback)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_graph_alloc"></a>
+<h2>CCchunk_graph_alloc</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/first.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCchunk_graph&nbsp;*CCchunk_graph_alloc&nbsp;(int&nbsp;ncount,&nbsp;int&nbsp;ecount)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_graph_free"></a>
+<h2>CCchunk_graph_free</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/first.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CCchunk_graph_free&nbsp;(CCchunk_graph&nbsp;*c)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_intmat_build"></a>
+<h2>CCchunk_intmat_build</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/intmat.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCchunk_intmat_build&nbsp;(CCchunk_intmat&nbsp;*mat_p,&nbsp;int&nbsp;ncols)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_intmat_addrow"></a>
+<h2>CCchunk_intmat_addrow</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/intmat.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCchunk_intmat_addrow&nbsp;(CCchunk_intmat&nbsp;*mat_p,&nbsp;int&nbsp;*row)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_intmat_ortho"></a>
+<h2>CCchunk_intmat_ortho</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/intmat.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCchunk_intmat_ortho&nbsp;(CCchunk_intmat&nbsp;*mat_p,&nbsp;int&nbsp;*ortho,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*pcol_p,&nbsp;int&nbsp;*taboo)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_intmat_init"></a>
+<h2>CCchunk_intmat_init</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/intmat.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CCchunk_intmat_init&nbsp;(CCchunk_intmat&nbsp;*mat_p)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_intmat_free"></a>
+<h2>CCchunk_intmat_free</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/intmat.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CCchunk_intmat_free&nbsp;(CCchunk_intmat&nbsp;*mat_p)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_intmat_dellastrows"></a>
+<h2>CCchunk_intmat_dellastrows</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/intmat.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CCchunk_intmat_dellastrows&nbsp;(CCchunk_intmat&nbsp;*mat_p,&nbsp;int&nbsp;ndel)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_lpinit"></a>
+<h2>CCchunk_lpinit</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/separate.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCchunk_lpinit&nbsp;(CCchunklp&nbsp;**lp_p,&nbsp;const&nbsp;char&nbsp;*lp_name,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;lp_nrows,&nbsp;double&nbsp;*xstar)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>Creates&nbsp;the&nbsp;*lp_p&nbsp;object&nbsp;(see&nbsp;'typedef&nbsp;struct&nbsp;CCchunklp'&nbsp;below)</tt></dd>
+<dd><tt>and&nbsp;initializes&nbsp;it&nbsp;to&nbsp;have&nbsp;name&nbsp;lp_name,&nbsp;N&nbsp;empty,&nbsp;and&nbsp;the&nbsp;initial</tt></dd>
+<dd><tt>(empty)&nbsp;lp&nbsp;from&nbsp;above.</tt></dd>
+<a NAME="CCchunk_lpfree"></a>
+<h2>CCchunk_lpfree</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/separate.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CCchunk_lpfree&nbsp;(CCchunklp&nbsp;**lp_p)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>Destroys&nbsp;*lp_p,&nbsp;freeing&nbsp;all&nbsp;its&nbsp;parts.</tt></dd>
+<a NAME="CCchunk_lpaddcol"></a>
+<h2>CCchunk_lpaddcol</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/separate.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCchunk_lpaddcol&nbsp;(CCchunklp&nbsp;*lp,&nbsp;double&nbsp;*x)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>Adds&nbsp;a&nbsp;new&nbsp;entry&nbsp;to&nbsp;N,&nbsp;and&nbsp;updates&nbsp;the&nbsp;lp&nbsp;to&nbsp;reflect&nbsp;the&nbsp;new&nbsp;x^j.</tt></dd>
+<dd><tt>Note&nbsp;that&nbsp;it&nbsp;is&nbsp;possible&nbsp;some&nbsp;rows&nbsp;of&nbsp;the&nbsp;LP&nbsp;have&nbsp;been&nbsp;relaxed;</tt></dd>
+<dd><tt>however,&nbsp;x&nbsp;is&nbsp;still&nbsp;expected&nbsp;to&nbsp;have&nbsp;lp_nrows&nbsp;entries;&nbsp;those&nbsp;for</tt></dd>
+<dd><tt>the&nbsp;relaxed&nbsp;rows&nbsp;are&nbsp;skipped&nbsp;when&nbsp;adding&nbsp;x.</tt></dd>
+<a NAME="CCchunk_lprelaxrow"></a>
+<h2>CCchunk_lprelaxrow</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/separate.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCchunk_lprelaxrow&nbsp;(CCchunklp&nbsp;*lp,&nbsp;int&nbsp;del_row)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>Deletes&nbsp;row&nbsp;del_row+1&nbsp;from&nbsp;lp&nbsp;--&nbsp;that&nbsp;is,&nbsp;changes&nbsp;lp&nbsp;so&nbsp;that</tt></dd>
+<dd><tt>coordinate&nbsp;del_row&nbsp;of&nbsp;x^*&nbsp;is&nbsp;ignored.&nbsp;&nbsp;This&nbsp;makes&nbsp;easier&nbsp;for&nbsp;the</tt></dd>
+<dd><tt>lp&nbsp;to&nbsp;be&nbsp;feasible.</tt></dd>
+<a NAME="CCchunk_lpsolve"></a>
+<h2>CCchunk_lpsolve</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/separate.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCchunk_lpsolve&nbsp;(CCchunklp&nbsp;*lp,&nbsp;int&nbsp;*lpstatus_p,&nbsp;double&nbsp;*c,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;double&nbsp;*alpha_p)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>"Solves"&nbsp;lp:&nbsp;*lp_status_p&nbsp;and&nbsp;(c,*alpha_p)&nbsp;will&nbsp;be&nbsp;set&nbsp;as</tt></dd>
+<dd><tt>described&nbsp;above,&nbsp;depending&nbsp;on&nbsp;the&nbsp;settings&nbsp;of&nbsp;SEPARATE_OPTIMIZE,</tt></dd>
+<dd><tt>SEPARATE_OPTIMIZE,&nbsp;SEPARATE_NORML1,&nbsp;and&nbsp;SEPARATE_EPSILON.</tt></dd>
+<a NAME="CCchunk_lpbasis"></a>
+<h2>CCchunk_lpbasis</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/separate.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCchunk_lpbasis&nbsp;(CCchunklp&nbsp;*lp,&nbsp;int&nbsp;ncols,&nbsp;int&nbsp;*basis)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>Sets&nbsp;basis[i]&nbsp;to&nbsp;1&nbsp;if&nbsp;column&nbsp;i&nbsp;is&nbsp;in&nbsp;the&nbsp;currentbasis,&nbsp;0</tt></dd>
+<dd><tt>otherwise.&nbsp;</tt></dd>
+<a NAME="CCchunk_localcuts"></a>
+<h2>CCchunk_localcuts</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/localcut.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCchunk_localcuts&nbsp;(CCtsp_lpcut_in&nbsp;**clist,&nbsp;int&nbsp;*cutcount,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;ncount,&nbsp;int&nbsp;ecount,&nbsp;int&nbsp;*elist,&nbsp;double&nbsp;*x,&nbsp;double&nbsp;eps,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;CCchunk_flag&nbsp;flags,&nbsp;CCchunk_localcut_timer&nbsp;*timer,&nbsp;int&nbsp;silent,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;CCrandstate&nbsp;*rstate)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_init_separate_timer"></a>
+<h2>CCchunk_init_separate_timer</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/first.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CCchunk_init_separate_timer&nbsp;(CCchunk_separate_timer&nbsp;*timer)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_init_find_timer"></a>
+<h2>CCchunk_init_find_timer</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/first.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CCchunk_init_find_timer&nbsp;(CCchunk_find_timer&nbsp;*timer)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_init_lift_timer"></a>
+<h2>CCchunk_init_lift_timer</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/first.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CCchunk_init_lift_timer&nbsp;(CCchunk_lift_timer&nbsp;*timer)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_init_oracle_timer"></a>
+<h2>CCchunk_init_oracle_timer</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/first.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CCchunk_init_oracle_timer&nbsp;(CCchunk_oracle_timer&nbsp;*timer)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_init_localcut_timer"></a>
+<h2>CCchunk_init_localcut_timer</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/first.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CCchunk_init_localcut_timer&nbsp;(CCchunk_localcut_timer&nbsp;*timer)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_print_separate_timer"></a>
+<h2>CCchunk_print_separate_timer</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/first.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CCchunk_print_separate_timer&nbsp;(CCchunk_separate_timer&nbsp;*timer)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_print_find_timer"></a>
+<h2>CCchunk_print_find_timer</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/first.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CCchunk_print_find_timer&nbsp;(CCchunk_find_timer&nbsp;*timer)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_print_lift_timer"></a>
+<h2>CCchunk_print_lift_timer</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/first.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CCchunk_print_lift_timer&nbsp;(CCchunk_lift_timer&nbsp;*timer)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_print_oracle_timer"></a>
+<h2>CCchunk_print_oracle_timer</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/first.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CCchunk_print_oracle_timer&nbsp;(CCchunk_oracle_timer&nbsp;*timer)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CCchunk_print_localcut_timer"></a>
+<h2>CCchunk_print_localcut_timer</h2>
+<dt>File:</dt>
+<dd><tt>LOCALCUT/first.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>localcut.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CCchunk_print_localcut_timer&nbsp;(CCchunk_localcut_timer&nbsp;*timer)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+</body>
+</html>

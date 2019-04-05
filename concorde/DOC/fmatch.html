@@ -1,0 +1,60 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>Concorde fmatch.h functions</title>
+</head>
+<body>
+<center><h1>Concorde fmatch.h functions</h1></center>
+<h2><a href="concorde_org.html">Organizational index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_funcs.html">Function index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_prog.html">Program index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_macro.html">Macro index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_types.html">Data Types index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+</h2><a NAME="CCfmatch_fractional_2match"></a>
+<h2>CCfmatch_fractional_2match</h2>
+<dt>File:</dt>
+<dd><tt>FMATCH/fmatch.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>fmatch.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCfmatch_fractional_2match&nbsp;(int&nbsp;ncount,&nbsp;int&nbsp;ecount,&nbsp;int&nbsp;*elist,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*elen,&nbsp;CCdatagroup&nbsp;*dat,&nbsp;double&nbsp;*val,&nbsp;int&nbsp;*thematching,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*thedual,&nbsp;int&nbsp;*thebasis,&nbsp;int&nbsp;wantbasic,&nbsp;int&nbsp;silent,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;CCrandstate&nbsp;*rstate)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>&nbsp;&nbsp;&nbsp;int&nbsp;ncount&nbsp;(the&nbsp;number&nbsp;of&nbsp;nodes&nbsp;in&nbsp;the&nbsp;graph)</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;int&nbsp;ecount&nbsp;(the&nbsp;number&nbsp;of&nbsp;edges)</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;int&nbsp;*elist&nbsp;(the&nbsp;edgelist&nbsp;in&nbsp;end1&nbsp;end2&nbsp;format)</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;int&nbsp;*elen&nbsp;(the&nbsp;weights&nbsp;on&nbsp;the&nbsp;edges)</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;CCdatagroup&nbsp;*dat&nbsp;(the&nbsp;info&nbsp;to&nbsp;price&nbsp;edges&nbsp;-&nbsp;NULL&nbsp;if&nbsp;no&nbsp;pricing)</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;double&nbsp;*xcoord&nbsp;(the&nbsp;x-coordinates&nbsp;for&nbsp;geometric&nbsp;problems&nbsp;-&nbsp;this</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;field&nbsp;can&nbsp;be&nbsp;NULL)</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;double&nbsp;*ycoord&nbsp;(the&nbsp;y-coordinates)</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;int&nbsp;innorm&nbsp;(the&nbsp;NORM&nbsp;for&nbsp;pricing&nbsp;the&nbsp;complete&nbsp;edgeset)</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;double&nbsp;*val&nbsp;(returns&nbsp;the&nbsp;optimal&nbsp;weight)</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;int&nbsp;*thematching&nbsp;(if&nbsp;non-NULL,&nbsp;then&nbsp;returns&nbsp;the&nbsp;optimal&nbsp;matching</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;end1&nbsp;end2&nbsp;value&nbsp;format,&nbsp;where&nbsp;value&nbsp;is&nbsp;1&nbsp;if</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edge&nbsp;gets&nbsp;assigned&nbsp;0.5&nbsp;and&nbsp;value&nbsp;is&nbsp;2&nbsp;if&nbsp;edge</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gets&nbsp;1.0&nbsp;-&nbsp;note&nbsp;that&nbsp;the&nbsp;array&nbsp;should&nbsp;be</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allocated&nbsp;by&nbsp;the&nbsp;calling&nbsp;routine,&nbsp;and&nbsp;should</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;6&nbsp;*&nbsp;ncount&nbsp;+&nbsp;1&nbsp;long&nbsp;-&nbsp;it&nbsp;is&nbsp;terminated&nbsp;by&nbsp;a</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-1)</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;int&nbsp;*thedual&nbsp;(if&nbsp;non-NULL,&nbsp;then&nbsp;returns&nbsp;the&nbsp;optimal&nbsp;dual&nbsp;solution</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with&nbsp;values&nbsp;twice&nbsp;their&nbsp;actual&nbsp;value&nbsp;(so&nbsp;they&nbsp;will</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;integers&nbsp;-&nbsp;the&nbsp;array&nbsp;should&nbsp;be&nbsp;alloced&nbsp;by&nbsp;the</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calling&nbsp;routine,&nbsp;and&nbsp;should&nbsp;be&nbsp;ncount&nbsp;long)</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;int&nbsp;*thebasis&nbsp;(if&nbsp;non-NULL,&nbsp;then&nbsp;returns&nbsp;the&nbsp;edges&nbsp;in&nbsp;the&nbsp;optimal</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;basis&nbsp;in&nbsp;end1&nbsp;end2&nbsp;format)</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;int&nbsp;wantbasis&nbsp;(if&nbsp;nonzero,&nbsp;then&nbsp;the&nbsp;optimal&nbsp;basic&nbsp;solution&nbsp;will</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;found)</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;int&nbsp;silent&nbsp;(if&nbsp;nonzero,&nbsp;will&nbsp;suppress&nbsp;print&nbsp;messages)</tt></dd>
+<dd><tt></tt></dd>
+<dd><tt>NOTES:</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;Use&nbsp;to&nbsp;find&nbsp;an&nbsp;optimal&nbsp;basis&nbsp;for&nbsp;the&nbsp;initial&nbsp;tsp&nbsp;LP.&nbsp;By&nbsp;changing</tt></dd>
+<dd><tt>MATCHDEGREE&nbsp;to&nbsp;1,&nbsp;it&nbsp;should&nbsp;find&nbsp;min-wieght&nbsp;fractional&nbsp;matchings.</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;The&nbsp;nodes&nbsp;should&nbsp;be&nbsp;numbered&nbsp;from&nbsp;0&nbsp;up&nbsp;to&nbsp;ncount&nbsp;-&nbsp;1.&nbsp;If&nbsp;dat</tt></dd>
+<dd><tt>is&nbsp;specified,&nbsp;then&nbsp;the&nbsp;code&nbsp;will&nbsp;use&nbsp;a&nbsp;price-repair&nbsp;loop&nbsp;to&nbsp;solve</tt></dd>
+<dd><tt>the&nbsp;problem&nbsp;over&nbsp;the&nbsp;complete&nbsp;graph.</tt></dd>
+</body>
+</html>

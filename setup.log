@@ -1,0 +1,162 @@
+2019/02/21 12:07:04 Starting cygwin install, version 2.895
+2019/02/21 12:07:04 User has backup/restore rights
+2019/02/21 12:07:04 io_stream_cygfile: fopen(/etc/setup/setup.rc) failed 2 No such file or directory
+2019/02/21 12:07:04 Current Directory: E:\SoftCorner\TSP
+2019/02/21 12:07:04 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2019/02/21 12:07:08 source: network install
+2019/02/21 12:07:09 root: C:\cygwin64 system
+2019/02/21 12:07:10 Selected local directory: E:\SoftCorner\TSP
+2019/02/21 12:07:11 net: Preconfig
+2019/02/21 12:07:23 source: download
+2019/02/21 12:07:24 Selected local directory: E:\SoftCorner\TSP
+2019/02/21 12:07:29 net: Preconfig
+2019/02/21 12:07:32 site: http://cygwin.mirror.constant.com/
+2019/02/21 12:07:33 HTTP status 404 fetching http://cygwin.mirror.constant.com/x86_64/setup.zst.sig
+2019/02/21 12:07:33 HTTP status 404 fetching http://cygwin.mirror.constant.com/x86_64/setup.zst
+2019/02/21 12:07:38 io_stream_cygfile: fopen(/etc/setup/timestamp) failed 2 No such file or directory
+2019/02/21 12:07:38 io_stream_cygfile: fopen(/etc/setup/installed.db) failed 2 No such file or directory
+2019/02/21 12:07:39 solving: 36 tasks, update: yes, use test packages: no
+2019/02/21 12:07:46 solving: 70 tasks, update: no, use test packages: no
+2019/02/21 12:07:46 Augmented Transaction List:
+2019/02/21 12:07:46    0 install                                     base-cygwin               3.8-1
+2019/02/21 12:07:46    1 install                                          cygwin             3.0.1-1
+2019/02/21 12:07:46    2 install                                  libpopt-common              1.16-2
+2019/02/21 12:07:46    3 install                                           login              1.12-1
+2019/02/21 12:07:46    4 install                                          mintty             2.9.6-0
+2019/02/21 12:07:46    5 install                                        terminfo     6.0-12.20171125
+2019/02/21 12:07:46    6 install                                          tzdata             2018i-1
+2019/02/21 12:07:46    7 install                                           zlib0            1.2.11-1
+2019/02/21 12:07:46    8 install                                           which              2.20-2
+2019/02/21 12:07:46    9 install                                             run             1.3.4-2
+2019/02/21 12:07:46   10 install                                      libtasn1_6              4.13-1
+2019/02/21 12:07:46   11 install                                     libsigsegv2              2.10-2
+2019/02/21 12:07:46   12 install                                    libpipeline1             1.4.0-1
+2019/02/21 12:07:46   13 install                                        libpcre1              8.40-3
+2019/02/21 12:07:46   14 install                                        liblzma5             5.2.3-1
+2019/02/21 12:07:46   15 install                                       libiconv2              1.14-3
+2019/02/21 12:07:46   16 install                                        libgmp10             6.1.2-1
+2019/02/21 12:07:46   17 install                                         libgcc1             7.4.0-1
+2019/02/21 12:07:46   18 install                                         libffi6             3.2.1-2
+2019/02/21 12:07:46   19 install                                        libbz2_1             1.0.6-3
+2019/02/21 12:07:46   20 install                                         libargp          20110921-3
+2019/02/21 12:07:46   21 install                                       ipc-utils               1.0-2
+2019/02/21 12:07:46   22 install                                        hostname              3.13-1
+2019/02/21 12:07:46   23 install                                      editrights              1.03-1
+2019/02/21 12:07:46   24 install                                            dash           0.5.9.1-1
+2019/02/21 12:07:46   25 install                                   libncursesw10     6.0-12.20171125
+2019/02/21 12:07:46   26 install                                            file              5.32-1
+2019/02/21 12:07:46   27 install                                        libintl8          0.19.8.1-2
+2019/02/21 12:07:46   28 install                                      libstdc++6             7.4.0-1
+2019/02/21 12:07:46   29 install                                        libmpfr6             4.0.2-1
+2019/02/21 12:07:46   30 install                                          getent           2.18.90-4
+2019/02/21 12:07:46   31 install                                     _autorebase            001007-1
+2019/02/21 12:07:46   32 install                                     vim-minimal          8.0.1567-1
+2019/02/21 12:07:46   33 install                                         ncurses     6.0-12.20171125
+2019/02/21 12:07:46   34 install                                    libreadline7             7.0.3-3
+2019/02/21 12:07:46   35 install                                            less               530-1
+2019/02/21 12:07:46   36 install                                             sed               4.4-1
+2019/02/21 12:07:46   37 install                                        libuuid1            2.32.1-1
+2019/02/21 12:07:46   38 install                                   libsmartcols1            2.32.1-1
+2019/02/21 12:07:46   39 install                                        libpopt0              1.16-2
+2019/02/21 12:07:46   40 install                                     libp11-kit0           0.23.10-1
+2019/02/21 12:07:46   41 install                                        libiconv              1.14-3
+2019/02/21 12:07:46   42 install                                        libgdbm4              1.12-1
+2019/02/21 12:07:46   43 install                                        libattr1            2.4.48-2
+2019/02/21 12:07:46   44 install                                            info               6.5-2
+2019/02/21 12:07:46   45 install                                       diffutils               3.5-2
+2019/02/21 12:07:46   46 install                                    alternatives          1.3.30c-10
+2019/02/21 12:07:46   47 install                                            gawk             4.2.1-1
+2019/02/21 12:07:46   48 install                                       libblkid1            2.32.1-1
+2019/02/21 12:07:46   49 install                                        cygutils            1.4.16-2
+2019/02/21 12:07:46   50 install                                   p11-kit-trust           0.23.10-1
+2019/02/21 12:07:46   51 install                                         p11-kit           0.23.10-1
+2019/02/21 12:07:46   52 install                                       coreutils              8.26-2
+2019/02/21 12:07:46   53 install                                       libfdisk1            2.32.1-1
+2019/02/21 12:07:46   54 install                                            bash            4.4.12-3
+2019/02/21 12:07:46   55 install                                      util-linux            2.32.1-1
+2019/02/21 12:07:46   56 install                                          tzcode             2018i-1
+2019/02/21 12:07:46   57 install                                              xz             5.2.3-1
+2019/02/21 12:07:46   58 install                                            gzip               1.8-1
+2019/02/21 12:07:46   59 install                                           groff            1.22.3-1
+2019/02/21 12:07:46   60 install                                            grep               3.0-2
+2019/02/21 12:07:46   61 install                                       findutils             4.6.0-1
+2019/02/21 12:07:46   62 install                                 ca-certificates              2.22-1
+2019/02/21 12:07:46   63 install                                           bzip2             1.0.6-3
+2019/02/21 12:07:46   64 install                                          man-db           2.7.6.1-1
+2019/02/21 12:07:46   65 install                                          rebase             4.4.4-1
+2019/02/21 12:07:46   66 install                                      base-files               4.2-4
+2019/02/21 12:07:46   67 install                                   libopenssl100            1.0.2p-1
+2019/02/21 12:07:46   68 install                                             tar              1.29-1
+2019/02/21 12:07:46   69 install                                         openssl            1.0.2p-1
+2019/02/21 12:07:49 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/base-cygwin/base-cygwin-3.8-1.tar.xz
+2019/02/21 12:07:50 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/cygwin/cygwin-3.0.1-1.tar.xz
+2019/02/21 12:07:50 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/popt/libpopt-common/libpopt-common-1.16-2.tar.xz
+2019/02/21 12:07:50 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/login/login-1.12-1.tar.xz
+2019/02/21 12:07:51 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/mintty/mintty-2.9.6-0.tar.xz
+2019/02/21 12:07:51 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/ncurses/terminfo/terminfo-6.0-12.20171125.tar.xz
+2019/02/21 12:07:51 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/tzdata/tzdata-2018i-1.tar.xz
+2019/02/21 12:07:52 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/zlib/zlib0/zlib0-1.2.11-1.tar.xz
+2019/02/21 12:07:52 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/which/which-2.20-2.tar.bz2
+2019/02/21 12:07:52 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/run/run-1.3.4-2.tar.xz
+2019/02/21 12:07:53 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/libtasn1/libtasn1_6/libtasn1_6-4.13-1.tar.xz
+2019/02/21 12:07:53 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/libsigsegv/libsigsegv2/libsigsegv2-2.10-2.tar.xz
+2019/02/21 12:07:53 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/libpipeline/libpipeline1/libpipeline1-1.4.0-1.tar.xz
+2019/02/21 12:07:54 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/pcre/libpcre1/libpcre1-8.40-3.tar.xz
+2019/02/21 12:07:54 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/xz/liblzma5/liblzma5-5.2.3-1.tar.xz
+2019/02/21 12:07:54 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/libiconv/libiconv2/libiconv2-1.14-3.tar.xz
+2019/02/21 12:07:55 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gmp/libgmp10/libgmp10-6.1.2-1.tar.xz
+2019/02/21 12:07:55 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/libgcc1/libgcc1-7.4.0-1.tar.xz
+2019/02/21 12:07:55 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/libffi/libffi6/libffi6-3.2.1-2.tar.xz
+2019/02/21 12:07:55 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/bzip2/libbz2_1/libbz2_1-1.0.6-3.tar.xz
+2019/02/21 12:07:56 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/libargp/libargp-20110921-3.tar.xz
+2019/02/21 12:07:56 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/ipc-utils/ipc-utils-1.0-2.tar.bz2
+2019/02/21 12:07:56 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/hostname/hostname-3.13-1.tar.bz2
+2019/02/21 12:07:57 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/editrights/editrights-1.03-1.tar.xz
+2019/02/21 12:07:57 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/dash/dash-0.5.9.1-1.tar.xz
+2019/02/21 12:07:57 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/ncurses/libncursesw10/libncursesw10-6.0-12.20171125.tar.xz
+2019/02/21 12:07:58 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/file/file-5.32-1.tar.xz
+2019/02/21 12:07:58 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gettext/libintl8/libintl8-0.19.8.1-2.tar.xz
+2019/02/21 12:07:58 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/libstdc++6/libstdc++6-7.4.0-1.tar.xz
+2019/02/21 12:07:59 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/mpfr/libmpfr6/libmpfr6-4.0.2-1.tar.xz
+2019/02/21 12:07:59 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/getent/getent-2.18.90-4.tar.xz
+2019/02/21 12:07:59 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/_autorebase/_autorebase-001007-1.tar.xz
+2019/02/21 12:07:59 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/vim/vim-minimal/vim-minimal-8.0.1567-1.tar.xz
+2019/02/21 12:08:00 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/ncurses/ncurses-6.0-12.20171125.tar.xz
+2019/02/21 12:08:00 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/readline/libreadline7/libreadline7-7.0.3-3.tar.xz
+2019/02/21 12:08:00 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/less/less-530-1.tar.xz
+2019/02/21 12:08:01 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/sed/sed-4.4-1.tar.xz
+2019/02/21 12:08:01 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libuuid1/libuuid1-2.32.1-1.tar.xz
+2019/02/21 12:08:01 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libsmartcols1/libsmartcols1-2.32.1-1.tar.xz
+2019/02/21 12:08:02 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/popt/libpopt0/libpopt0-1.16-2.tar.xz
+2019/02/21 12:08:02 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/p11-kit/libp11-kit0/libp11-kit0-0.23.10-1.tar.xz
+2019/02/21 12:08:02 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/libiconv/libiconv-1.14-3.tar.xz
+2019/02/21 12:08:03 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gdbm/libgdbm4/libgdbm4-1.12-1.tar.xz
+2019/02/21 12:08:03 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/attr/libattr1/libattr1-2.4.48-2.tar.xz
+2019/02/21 12:08:03 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/texinfo/info/info-6.5-2.tar.xz
+2019/02/21 12:08:03 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/diffutils/diffutils-3.5-2.tar.xz
+2019/02/21 12:08:04 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/alternatives/alternatives-1.3.30c-10.tar.bz2
+2019/02/21 12:08:04 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gawk/gawk-4.2.1-1.tar.xz
+2019/02/21 12:08:05 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libblkid1/libblkid1-2.32.1-1.tar.xz
+2019/02/21 12:08:05 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/cygutils/cygutils-1.4.16-2.tar.xz
+2019/02/21 12:08:05 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/p11-kit/p11-kit-trust/p11-kit-trust-0.23.10-1.tar.xz
+2019/02/21 12:08:06 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/p11-kit/p11-kit-0.23.10-1.tar.xz
+2019/02/21 12:08:06 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/coreutils/coreutils-8.26-2.tar.xz
+2019/02/21 12:08:07 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libfdisk1/libfdisk1-2.32.1-1.tar.xz
+2019/02/21 12:08:07 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/bash/bash-4.4.12-3.tar.xz
+2019/02/21 12:08:07 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/util-linux-2.32.1-1.tar.xz
+2019/02/21 12:08:08 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/tzcode/tzcode-2018i-1.tar.xz
+2019/02/21 12:08:08 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/xz/xz-5.2.3-1.tar.xz
+2019/02/21 12:08:08 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gzip/gzip-1.8-1.tar.xz
+2019/02/21 12:08:09 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/groff/groff-1.22.3-1.tar.xz
+2019/02/21 12:08:09 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/grep/grep-3.0-2.tar.xz
+2019/02/21 12:08:09 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/findutils/findutils-4.6.0-1.tar.xz
+2019/02/21 12:08:10 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/ca-certificates/ca-certificates-2.22-1.tar.xz
+2019/02/21 12:08:10 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/bzip2/bzip2-1.0.6-3.tar.xz
+2019/02/21 12:08:10 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/man-db/man-db-2.7.6.1-1.tar.xz
+2019/02/21 12:08:11 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/rebase/rebase-4.4.4-1.tar.xz
+2019/02/21 12:08:11 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/base-files/base-files-4.2-4.tar.xz
+2019/02/21 12:08:11 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/openssl/libopenssl100/libopenssl100-1.0.2p-1.tar.xz
+2019/02/21 12:08:12 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/tar/tar-1.29-1.tar.xz
+2019/02/21 12:08:12 Downloaded E:\SoftCorner\TSP/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/openssl/openssl-1.0.2p-1.tar.xz
+2019/02/21 12:09:39 note: Download Complete
+2019/02/21 12:09:39 Ending cygwin install

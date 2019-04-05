@@ -1,0 +1,61 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>Concorde heldkarp.h functions</title>
+</head>
+<body>
+<center><h1>Concorde heldkarp.h functions</h1></center>
+<h2><a href="concorde_org.html">Organizational index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_funcs.html">Function index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_prog.html">Program index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_macro.html">Macro index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_types.html">Data Types index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+</h2><a NAME="CCheldkarp_small"></a>
+<h2>CCheldkarp_small</h2>
+<dt>File:</dt>
+<dd><tt>HELDKARP/heldkarp.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>heldkarp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCheldkarp_small&nbsp;(int&nbsp;ncount,&nbsp;CCdatagroup&nbsp;*dat,&nbsp;double&nbsp;*upbound,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;double&nbsp;*optval,&nbsp;int&nbsp;*foundtour,&nbsp;int&nbsp;anytour,&nbsp;int&nbsp;nodelimit,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;silent)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>-ncount&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;nodes&nbsp;in&nbsp;the&nbsp;graph.</tt></dd>
+<dd><tt>-dat&nbsp;specifies&nbsp;the&nbsp;information&nbsp;needed&nbsp;to&nbsp;compute&nbsp;the&nbsp;edge&nbsp;lengths.</tt></dd>
+<dd><tt>-upbound&nbsp;is&nbsp;an&nbsp;upperbound&nbsp;on&nbsp;the&nbsp;optimal&nbsp;tour&nbsp;length&nbsp;(it&nbsp;can&nbsp;be</tt></dd>
+<dd><tt>&nbsp;NULL)</tt></dd>
+<dd><tt>-optval&nbsp;returns&nbsp;the&nbsp;length&nbsp;of&nbsp;an&nbsp;optimal&nbsp;tour&nbsp;(or&nbsp;the&nbsp;upperbound</tt></dd>
+<dd><tt>&nbsp;if&nbsp;no&nbsp;better&nbsp;tour&nbsp;is&nbsp;found,&nbsp;or&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;first&nbsp;tour&nbsp;found</tt></dd>
+<dd><tt>&nbsp;that&nbsp;it&nbsp;better&nbsp;than&nbsp;upbound&nbsp;if&nbsp;anytour&nbsp;=&nbsp;1&nbsp;is&nbsp;specified)</tt></dd>
+<dd><tt>-foundtour&nbsp;will&nbsp;be&nbsp;set&nbsp;to&nbsp;1&nbsp;if&nbsp;a&nbsp;tour&nbsp;better&nbsp;than&nbsp;upbound&nbsp;is&nbsp;found</tt></dd>
+<dd><tt>-anytour&nbsp;should&nbsp;be&nbsp;set&nbsp;to&nbsp;1&nbsp;to&nbsp;cut&nbsp;off&nbsp;the&nbsp;search&nbsp;after&nbsp;any&nbsp;tour</tt></dd>
+<dd><tt>&nbsp;better&nbsp;than&nbsp;upbound&nbsp;is&nbsp;found&nbsp;(it&nbsp;may&nbsp;not&nbsp;be&nbsp;an&nbsp;optimal&nbsp;tour)</tt></dd>
+<dd><tt>-nodelimit&nbsp;specifies&nbsp;a&nbsp;limit&nbsp;on&nbsp;the&nbsp;number&nbsp;of&nbsp;search&nbsp;nodes&nbsp;(use&nbsp;-1</tt></dd>
+<dd><tt>&nbsp;to&nbsp;impose&nbsp;no&nbsp;limit)</tt></dd>
+<dd><tt>-silent&nbsp;should&nbsp;be&nbsp;set&nbsp;to&nbsp;1&nbsp;to&nbsp;restrict&nbsp;the&nbsp;output&nbsp;and&nbsp;2&nbsp;to</tt></dd>
+<dd><tt>&nbsp;disable&nbsp;all&nbsp;normal&nbsp;output</tt></dd>
+<a NAME="CCheldkarp_small_elist"></a>
+<h2>CCheldkarp_small_elist</h2>
+<dt>File:</dt>
+<dd><tt>HELDKARP/heldkarp.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>heldkarp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCheldkarp_small_elist&nbsp;(int&nbsp;ncount,&nbsp;int&nbsp;ecount,&nbsp;int&nbsp;*elist,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*elen,&nbsp;int&nbsp;*upbound,&nbsp;int&nbsp;*optval,&nbsp;int&nbsp;*foundtour,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;anytour,&nbsp;int&nbsp;nodelimit,&nbsp;int&nbsp;silent)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>&nbsp;USES&nbsp;edgelist&nbsp;rather&nbsp;than&nbsp;datagroup.</tt></dd>
+<dd><tt>&nbsp;&nbsp;-ecount&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;edges&nbsp;in&nbsp;the&nbsp;graph.</tt></dd>
+<dd><tt>&nbsp;&nbsp;-elist&nbsp;is&nbsp;the&nbsp;list&nbsp;of&nbsp;edges&nbsp;in&nbsp;end0&nbsp;end1&nbsp;format.</tt></dd>
+<dd><tt>&nbsp;&nbsp;-elen&nbsp;is&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;edge&nbsp;lengths.</tt></dd>
+<dd><tt></tt></dd>
+<dd><tt>NOTES:&nbsp;The&nbsp;upperbound&nbsp;will&nbsp;be&nbsp;converted&nbsp;to&nbsp;an&nbsp;int.</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Graph&nbsp;can&nbsp;have&nbsp;at&nbsp;most&nbsp;MAX_NODES&nbsp;with&nbsp;edge&nbsp;lengths&nbsp;no&nbsp;greater</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;than&nbsp;&nbsp;WEIGHT_MAX_EDGE</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;code&nbsp;was&nbsp;designed&nbsp;for&nbsp;problems&nbsp;in&nbsp;the&nbsp;range&nbsp;of&nbsp;25&nbsp;to&nbsp;35</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodes.</tt></dd>
+</body>
+</html>

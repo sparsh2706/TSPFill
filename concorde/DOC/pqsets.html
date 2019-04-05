@@ -1,0 +1,212 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>Concorde pqsets.h functions</title>
+</head>
+<body>
+<center><h1>Concorde pqsets.h functions</h1></center>
+<h2><a href="concorde_org.html">Organizational index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_funcs.html">Function index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_prog.html">Program index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_macro.html">Macro index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_types.html">Data Types index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+</h2><a NAME="CCpq_set_INIT"></a>
+<h2>CCpq_set_INIT</h2>
+<dt>File:</dt>
+<dd><tt>INCLUDE/pqsets.h</tt></dd>
+<dt>Header:</dt>
+<dd><tt>pqsets.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCpq_set_INIT(CCpq_set&nbsp;s)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>initializes&nbsp;s&nbsp;to&nbsp;the&nbsp;empty&nbsp;set</tt></dd>
+<a NAME="CCpq_set_ISEMPTY"></a>
+<h2>CCpq_set_ISEMPTY</h2>
+<dt>File:</dt>
+<dd><tt>INCLUDE/pqsets.h</tt></dd>
+<dt>Header:</dt>
+<dd><tt>pqsets.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCpq_set_ISEMPTY(CCpq_set&nbsp;s)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>is&nbsp;an&nbsp;expression&nbsp;which&nbsp;tests&nbsp;if&nbsp;s&nbsp;is&nbsp;empty</tt></dd>
+<a NAME="CCpq_set_SIZE"></a>
+<h2>CCpq_set_SIZE</h2>
+<dt>File:</dt>
+<dd><tt>INCLUDE/pqsets.h</tt></dd>
+<dt>Header:</dt>
+<dd><tt>pqsets.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCpq_set_SIZE(CCpq_set&nbsp;s)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>is&nbsp;the&nbsp;size&nbsp;of&nbsp;s</tt></dd>
+<a NAME="CCpq_set_PTR_TO"></a>
+<h2>CCpq_set_PTR_TO</h2>
+<dt>File:</dt>
+<dd><tt>INCLUDE/pqsets.h</tt></dd>
+<dt>Header:</dt>
+<dd><tt>pqsets.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCpq_set_PTR_TO(CCpq_elem&nbsp;e,&nbsp;CCpq_node&nbsp;*q)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>is&nbsp;the&nbsp;field&nbsp;of&nbsp;e&nbsp;which&nbsp;points&nbsp;to&nbsp;q</tt></dd>
+<a NAME="CCpq_set_PTR_REPLACE"></a>
+<h2>CCpq_set_PTR_REPLACE</h2>
+<dt>File:</dt>
+<dd><tt>INCLUDE/pqsets.h</tt></dd>
+<dt>Header:</dt>
+<dd><tt>pqsets.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCpq_set_PTR_REPLACE(CCpq_elem&nbsp;e,&nbsp;CCpq_node&nbsp;*q,&nbsp;CCpq_node&nbsp;*r)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>replaces&nbsp;q&nbsp;with&nbsp;r&nbsp;in&nbsp;e</tt></dd>
+<a NAME="CCpq_set_PTR_AWAY"></a>
+<h2>CCpq_set_PTR_AWAY</h2>
+<dt>File:</dt>
+<dd><tt>INCLUDE/pqsets.h</tt></dd>
+<dt>Header:</dt>
+<dd><tt>pqsets.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCpq_set_PTR_AWAY(CCpq_elem&nbsp;e,&nbsp;CCpq_node&nbsp;*q)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>is&nbsp;the&nbsp;field&nbsp;of&nbsp;e&nbsp;which&nbsp;doesn't&nbsp;point&nbsp;to&nbsp;q</tt></dd>
+<a NAME="CCpq_set_ADD_WORK"></a>
+<h2>CCpq_set_ADD_WORK</h2>
+<dt>File:</dt>
+<dd><tt>INCLUDE/pqsets.h</tt></dd>
+<dt>Header:</dt>
+<dd><tt>pqsets.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCpq_set_ADD_WORK(CCpq_node&nbsp;*x,&nbsp;CCpq_set&nbsp;s,&nbsp;ELEM_FIELD&nbsp;efield,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;DIRECTION&nbsp;dir)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>adds&nbsp;x&nbsp;to&nbsp;s&nbsp;at&nbsp;the&nbsp;dir&nbsp;end,&nbsp;using&nbsp;the&nbsp;efield&nbsp;field&nbsp;to&nbsp;link&nbsp;things</tt></dd>
+<dd><tt>together.&nbsp;It&nbsp;is&nbsp;intended&nbsp;to&nbsp;be&nbsp;an&nbsp;internal&nbsp;macro&nbsp;used&nbsp;by</tt></dd>
+<dd><tt>CCpq_set_ADD_LEFT&nbsp;and&nbsp;CCpq_set_ADD_RIGHT.</tt></dd>
+<a NAME="CCpq_set_ADD_LEFT"></a>
+<h2>CCpq_set_ADD_LEFT</h2>
+<dt>File:</dt>
+<dd><tt>INCLUDE/pqsets.h</tt></dd>
+<dt>Header:</dt>
+<dd><tt>pqsets.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCpq_set_ADD_LEFT(CCpq_node&nbsp;*x,&nbsp;CCpq_set&nbsp;s,&nbsp;ELEM_FIELD&nbsp;efield)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>adds&nbsp;x&nbsp;to&nbsp;s&nbsp;at&nbsp;the&nbsp;left&nbsp;end.</tt></dd>
+<a NAME="CCpq_set_ADD_RIGHT"></a>
+<h2>CCpq_set_ADD_RIGHT</h2>
+<dt>File:</dt>
+<dd><tt>INCLUDE/pqsets.h</tt></dd>
+<dt>Header:</dt>
+<dd><tt>pqsets.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCpq_set_ADD_RIGHT(CCpq_node&nbsp;*x,&nbsp;CCpq_set&nbsp;s,&nbsp;ELEM_FIELD&nbsp;efield)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>adds&nbsp;x&nbsp;to&nbsp;s&nbsp;at&nbsp;the&nbsp;right&nbsp;end.</tt></dd>
+<a NAME="CCpq_set_ADD"></a>
+<h2>CCpq_set_ADD</h2>
+<dt>File:</dt>
+<dd><tt>INCLUDE/pqsets.h</tt></dd>
+<dt>Header:</dt>
+<dd><tt>pqsets.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCpq_set_ADD(CCpq_node&nbsp;*x,&nbsp;CCpq_set&nbsp;s,&nbsp;ELEM_FIELD&nbsp;efield)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>adds&nbsp;x&nbsp;to&nbsp;s</tt></dd>
+<a NAME="CCpq_set_DELETE"></a>
+<h2>CCpq_set_DELETE</h2>
+<dt>File:</dt>
+<dd><tt>INCLUDE/pqsets.h</tt></dd>
+<dt>Header:</dt>
+<dd><tt>pqsets.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCpq_set_DELETE(CCpq_node&nbsp;*x,&nbsp;CCpq_set&nbsp;s,&nbsp;ELEM_FIELD&nbsp;efield)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>deletes&nbsp;x&nbsp;from&nbsp;s</tt></dd>
+<a NAME="CCpq_set_DELETE2"></a>
+<h2>CCpq_set_DELETE2</h2>
+<dt>File:</dt>
+<dd><tt>INCLUDE/pqsets.h</tt></dd>
+<dt>Header:</dt>
+<dd><tt>pqsets.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCpq_set_DELETE2(CCpq_node&nbsp;*x,&nbsp;SET_FIELD&nbsp;sfield,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;ELEM_FIELD&nbsp;efield)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>deletes&nbsp;x&nbsp;from&nbsp;the&nbsp;sfield&nbsp;set&nbsp;of&nbsp;its&nbsp;parent.&nbsp;&nbsp;If&nbsp;x&nbsp;is&nbsp;an&nbsp;endmost</tt></dd>
+<dd><tt>child&nbsp;in&nbsp;this&nbsp;set,&nbsp;then&nbsp;DELETE2&nbsp;uses&nbsp;the&nbsp;parent&nbsp;pointer&nbsp;to&nbsp;find</tt></dd>
+<dd><tt>the&nbsp;set&nbsp;field.&nbsp;&nbsp;Otherwise,&nbsp;the&nbsp;parent&nbsp;pointer&nbsp;is&nbsp;not&nbsp;used.</tt></dd>
+<a NAME="CCpq_set_LEFT_ELEM"></a>
+<h2>CCpq_set_LEFT_ELEM</h2>
+<dt>File:</dt>
+<dd><tt>INCLUDE/pqsets.h</tt></dd>
+<dt>Header:</dt>
+<dd><tt>pqsets.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCpq_set_LEFT_ELEM(CCpq_set&nbsp;s)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>is&nbsp;the&nbsp;left&nbsp;element&nbsp;of&nbsp;s,&nbsp;or&nbsp;NULL&nbsp;if&nbsp;s&nbsp;is&nbsp;empty</tt></dd>
+<a NAME="CCpq_set_RIGHT_ELEM"></a>
+<h2>CCpq_set_RIGHT_ELEM</h2>
+<dt>File:</dt>
+<dd><tt>INCLUDE/pqsets.h</tt></dd>
+<dt>Header:</dt>
+<dd><tt>pqsets.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCpq_set_RIGHT_ELEM(CCpq_set&nbsp;s)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>is&nbsp;the&nbsp;right&nbsp;element&nbsp;of&nbsp;s,&nbsp;or&nbsp;NULL&nbsp;if&nbsp;s&nbsp;is&nbsp;empty</tt></dd>
+<a NAME="CCpq_set_FOREACH"></a>
+<h2>CCpq_set_FOREACH</h2>
+<dt>File:</dt>
+<dd><tt>INCLUDE/pqsets.h</tt></dd>
+<dt>Header:</dt>
+<dd><tt>pqsets.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCpq_set_FOREACH(CCpq_set&nbsp;s,&nbsp;CCpq_node&nbsp;*x,&nbsp;ELEM_FIELD&nbsp;efield,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;CCpq_node&nbsp;*xprev,&nbsp;CCpq_node&nbsp;*xnext)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>iterates&nbsp;x&nbsp;over&nbsp;elements&nbsp;of&nbsp;s&nbsp;using&nbsp;temporary&nbsp;variables&nbsp;xprev&nbsp;and</tt></dd>
+<dd><tt>xnext.</tt></dd>
+<a NAME="CCpq_set_FOREACH_FROM"></a>
+<h2>CCpq_set_FOREACH_FROM</h2>
+<dt>File:</dt>
+<dd><tt>INCLUDE/pqsets.h</tt></dd>
+<dt>Header:</dt>
+<dd><tt>pqsets.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCpq_set_FOREACH_FROM(CCpq_node&nbsp;*x,&nbsp;ELEM_FIELD&nbsp;efield,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;CCpq_node&nbsp;*xprev,&nbsp;CCpq_node&nbsp;*xnext)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>iterates&nbsp;x&nbsp;over&nbsp;elements&nbsp;of&nbsp;s&nbsp;starting&nbsp;at&nbsp;x&nbsp;and&nbsp;going&nbsp;away&nbsp;from</tt></dd>
+<dd><tt>xprev.&nbsp;&nbsp;xnext&nbsp;is&nbsp;a&nbsp;temporary&nbsp;variable&nbsp;used&nbsp;in&nbsp;the&nbsp;loop,&nbsp;which&nbsp;also</tt></dd>
+<dd><tt>changes&nbsp;xprev&nbsp;and&nbsp;x</tt></dd>
+<a NAME="CCpq_set_FOREACH_DEL"></a>
+<h2>CCpq_set_FOREACH_DEL</h2>
+<dt>File:</dt>
+<dd><tt>INCLUDE/pqsets.h</tt></dd>
+<dt>Header:</dt>
+<dd><tt>pqsets.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCpq_set_FOREACH_DEL(CCpq_set&nbsp;s,&nbsp;CCpq_node&nbsp;*x,&nbsp;ELEM_FIELD&nbsp;efield,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;CCpq_node&nbsp;*xprev,&nbsp;CCpq_node&nbsp;*xnext)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>iterates&nbsp;x&nbsp;over&nbsp;elements&nbsp;of&nbsp;s&nbsp;using&nbsp;temporary&nbsp;variables&nbsp;xprev&nbsp;and</tt></dd>
+<dd><tt>xnext.&nbsp;&nbsp;x&nbsp;may&nbsp;be&nbsp;deleted&nbsp;from&nbsp;the&nbsp;set&nbsp;in&nbsp;the&nbsp;body&nbsp;of&nbsp;the&nbsp;loop&nbsp;(but</tt></dd>
+<dd><tt>delete&nbsp;any&nbsp;other&nbsp;element&nbsp;from&nbsp;s&nbsp;at&nbsp;your&nbsp;own&nbsp;risk).</tt></dd>
+<a NAME="CCpq_set_FOREACH_ADJ"></a>
+<h2>CCpq_set_FOREACH_ADJ</h2>
+<dt>File:</dt>
+<dd><tt>INCLUDE/pqsets.h</tt></dd>
+<dt>Header:</dt>
+<dd><tt>pqsets.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>CCpq_set_FOREACH_ADJ(CCpq_node&nbsp;*x,&nbsp;ELEM_FIELD&nbsp;efield,&nbsp;CCpq_node&nbsp;*z,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;itemp)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>iterates&nbsp;z&nbsp;over&nbsp;the&nbsp;immediate&nbsp;neighbors&nbsp;of&nbsp;x&nbsp;using&nbsp;itemp&nbsp;as&nbsp;a</tt></dd>
+<dd><tt>temporary&nbsp;variable.&nbsp;It&nbsp;is&nbsp;just&nbsp;used&nbsp;to&nbsp;save&nbsp;code&nbsp;replication&nbsp;when</tt></dd>
+<dd><tt>you&nbsp;want&nbsp;to&nbsp;do&nbsp;something&nbsp;for&nbsp;each&nbsp;of&nbsp;the&nbsp;two&nbsp;neighbors.</tt></dd>
+</body>
+</html>

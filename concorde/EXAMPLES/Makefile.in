@@ -1,0 +1,53 @@
+#
+#   This file is part of CONCORDE
+#
+#   (c) Copyright 1995--1999 by David Applegate, Robert Bixby,
+#   Vasek Chvatal, and William Cook
+#
+#   Permission is granted for academic research use.  For other uses,
+#   contact the authors for licensing options.
+#
+#   Use at your own risk.  We make no guarantees about the
+#   correctness or usefulness of this code.
+#
+
+@SET_MAKE@
+SHELL = @MAKESHELL@
+SRCROOT = @top_srcdir@
+BLDROOT = ..
+
+srcdir = @srcdir@
+VPATH = @srcdir@
+
+CC = @CC@
+CFLAGS = @CFLAGS@ @CPPFLAGS@ -I$(BLDROOT)
+LDFLAGS = @CFLAGS@ @LDFLAGS@
+LIBFLAGS = @LIBS@
+
+OBJ_SUFFIX = @OBJ_SUFFIX@
+o = $(OBJ_SUFFIX)
+
+ALLSRCS=near.c
+
+LIBS=$(BLDROOT)/concorde.a
+
+all: near
+
+everything: all
+
+near: near.$o $(LIBS)
+	$(CC) $(LDFLAGS) -o $@ near.$o $(LIBS) $(LIBFLAGS)
+
+clean:
+	-rm -f *.$o near@EXE_SUFFIX@
+
+$(BLDROOT)/concorde.@LIB_SUFFIX@:
+
+include ../INCLUDE/Makefile.common
+
+# DO NOT DELETE THIS LINE -- make depend depends on it.
+
+I=$(CCINCDIR)
+I2=$(BLDROOT)/INCLUDE
+
+near.$o:     near.c          ../concorde.h 

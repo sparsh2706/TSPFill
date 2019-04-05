@@ -1,0 +1,129 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.51 [en] (X11; I; SunOS 5.6 i86pc) [Netscape]">
+   <title>Concorde README and Installation guide</title>
+</head>
+<body>
+
+<center>
+<h1>
+Concorde README and Installation guide</h1></center>
+This README file is part of the 99.12.15 release of the Concorde. This
+is the initial full release of Concorde. More data about Concorde is available
+from the <a href="http://www.caam.rice.edu/keck/concorde.html">Concorde
+page</a>.
+<p>If you would like to be placed on the Concorde mailing
+list to receive notifications of updates to the code, please send your
+e-mail address to concorde@caam.rice.edu.
+<p>Concorde is a computer code for the traveling salesman problem (TSP)
+and some related network optimization problems. The code is written in
+the ANSI C programming language and it is available for academic research
+use; for other uses, contact concorde@caam.rice.edu for licensing options.
+<p>Concorde's TSP solver has been used to obtain the optimal solutions
+to all TSPLIB instances having up to 13,509 cities.
+<p>The Concorde callable library includes over 700 functions permitting
+users to create specialized codes for TSP-like problems. All Concorde functions
+are thread-safe for prgramming in shared-memory parallel environments;
+the main TSP solver includes code for running over networks of unix workstations.
+<p>Concorde's documentation is in contained in the DOC directory of the
+Concorde distribution, and may be viewed with any web browser. Start with
+the file <a href="index.html">index.html</a>. The <a href="http://www.caam.rice.edu/keck/concorde/DOC/index.html">online
+version of the documentation</a> may be more current.
+<p>The rest of this file contains instructions for unpacking, configuring,
+and compiling Concorde.
+<p>Concorde is distributed as a gzipped tar file. To unpack, first gunzip
+the downloaded file, then use tar to unpack the archive:
+<blockquote><tt>$ gunzip co991215.tgz</tt>
+<br><tt>$ tar xvf co991215.tar</tt></blockquote>
+If you do not have access to gunzip, download the uncompressed distibution
+file from the <a href="http://www.caam.rice.edu/keck/concorde.html">Concorde
+page</a> and skip the gunzip step.
+<p>Unpacking the distribution create a directory, "concorde", and several
+subdirectories. To configure, cd into the concorde directory, and run the
+configure script:
+<blockquote><tt>$ cd concorde</tt>
+<br><tt>$ ./configure</tt></blockquote
+configure supports several command-line options:
+<p><tt>--help</tt> Prints a list of all options configure supports. The last options
+are the most pertinent.
+<p><tt>--with-cplex</tt> Indicates to use the cplex LP solver. The current default
+is to use cplex if the cplex library is available. If no LP solver is available,
+the concorde features which require an LP solver will be disabled. In future
+versions of concorde, we hope to support other LP solvers.
+<p><tt>--with-cplex=DIR</tt> Specifies the directory containing the Cplex callable
+library. This directory should contain both the library (<tt>libcplex.a</tt>) and
+the header file (<tt>cplex.h</tt>).
+<p><tt>--without-cplex</tt> Disables using a cplex LP solver even if one is available.
+<p><tt>--enable-ccdefaults</tt> Indicates that a set of default compiler and loader
+flags should be used. We use this flag during development to enable useful
+optimization and warning options on our development platforms. They may
+or may not be useful for you. See also the discussion of CC, CFLAGS, CPPFLAGS,
+and LDFLAGS below.
+<p><tt>--enable-debugger</tt> Overrides the optimization options set by <tt>--enable-ccdefaults</tt>
+to support additional debugging.
+<p>configure is also affected by several environment variables. CC controls
+which c compiler to use, CPPFLAGS specifies the C preprocessor flags to
+use, CFLAGS specifies the C compiler flags to use, and LDFLAGS specifies
+loader flags to use. configure generates defaults for all of these variables,
+by default using "gcc -g -O2" if gcc is available, and "cc -g" otherwise.
+For better performance of the concorde package, set CFLAGS to "-g -O3"
+if compiling with gcc, and a strong optimization flag for your compiler
+otherwise (typically "-O3", "-O2", or "-xO2"). The method for setting a
+environment variable depends on the type of shell you are using. You can
+usually find out which kind of shell you are using by typing "echo $SHELL".
+Otherwise, try one method and if it doesn't work, try the other. If you
+are using sh, bash, ksh, ash, or some other Bourne-like shell, you can
+simply set the variables on the command line, for example:
+<blockquote><tt>$ CC="gcc" CFLAGS="-g -O3" ./configure</tt>
+</blockquote>
+If you are using csh, tcsh, or some other C-shell, you set the variables
+by using setenv, for example:
+<blockquote><tt>$ setenv CC "gcc"</tt>
+<br><tt>$ setenv CFLAGS "-g -O3"</tt>
+<br><tt>$ ./configure</tt>
+</blockquote>
+configure determines many features about your operating system and configuration
+which it uses to control concorde's compilation. After configure has run,
+you should look through the file <tt>INCLUDE/config.h</tt> to make sure it has made
+reasonable choices. Then, you can compile concorde by using make:
+<blockquote><tt>$ make</tt>
+</blockquote>
+This builds the concorde library (<tt>concorde.a</tt>), header file (<tt>concorde.h</tt>),
+and several executable programs:
+<ul>
+<li><tt>TSP/concorde</tt> the TSP solver</li>
+<li><tt>LINKERN/linkern</tt> the Lin-Kernighan TSP heuristic</li>
+<li><tt>CUT/mincut</tt> finds minimum cuts EDGEGEN/edgegen generates
+edge sets</li>
+<li><tt>FMATCH/fmatch</tt> solves fractional 2-matching problems</li>
+<li><tt>LOCALCUT/localcut</tt> an interface to the localcut separation
+routine</li>
+<li><tt>TOOLS/showres</tt> shows the current state of a branch-and-cut
+computation</li>
+<li><tt>TOOLS/tourchk</tt> checks the validity of a tour</li>
+<li><tt>TOOLS/tourlen</tt> computes the length of a tour</li>
+</ul>
+There are other programs which are part of concorde, but are for more
+specialized computations (such as testing parts of concorde, or network
+parallel computation). These may be compiled by:
+<blockquote><tt>$ make everything</tt></blockquote>
+If you are using Gnu make, then you can separate the build directory
+from the source directory. Simply make the build directory, cd into it,
+and then run the configure from the source directory. If for some reason
+configure cannot figure out where the source directory is, specify it with
+the "<tt>--srcdir=DIR</tt>" command line argument. A complete example of unpacking,
+configuring, and compiling in a separate build directory, is:
+<blockquote><tt>$ gunzip co991215.tgz</tt>
+<br><tt>$ tar xvf co991215.tar</tt>
+<br><tt>$ mkdir concorde_build</tt>
+<br><tt>$ cd concorde_build</tt>
+<br><tt>$ ../concorde/configure</tt>
+<br><tt>$ make</tt>
+</blockquote>
+Once again, if you would like to be placed on the Concorde mailing
+list to receive notifications of updates to the code, please send your
+e-mail address to concorde@caam.rice.edu.
+</body>
+</html>

@@ -1,0 +1,597 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>Concorde lp.h functions</title>
+</head>
+<body>
+<center><h1>Concorde lp.h functions</h1></center>
+<h2><a href="concorde_org.html">Organizational index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_funcs.html">Function index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_prog.html">Program index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_macro.html">Macro index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_types.html">Data Types index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+</h2><a NAME="CClp_init"></a>
+<h2>CClp_init</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_init&nbsp;(CClp&nbsp;**lp)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>INITIALIZES&nbsp;the&nbsp;LP.</tt></dd>
+<a NAME="CClp_force_perturb"></a>
+<h2>CClp_force_perturb</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_force_perturb&nbsp;(CClp&nbsp;*lp)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>Forces&nbsp;a&nbsp;perturbation&nbsp;in&nbsp;the&nbsp;LP&nbsp;simplex&nbsp;solves</tt></dd>
+<a NAME="CClp_tune_small"></a>
+<h2>CClp_tune_small</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_tune_small&nbsp;(CClp&nbsp;*lp)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>SETS&nbsp;solver&nbsp;options&nbsp;for&nbsp;tiny&nbsp;problems.</tt></dd>
+<a NAME="CClp_disable_presolve"></a>
+<h2>CClp_disable_presolve</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_disable_presolve&nbsp;(CClp&nbsp;*lp)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>DISABLES&nbsp;the&nbsp;solvers&nbsp;presolve.</tt></dd>
+<a NAME="CClp_free"></a>
+<h2>CClp_free</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CClp_free&nbsp;(CClp&nbsp;**lp)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>FREES&nbsp;the&nbsp;LP,&nbsp;both&nbsp;the&nbsp;allocation&nbsp;in&nbsp;CClp_init&nbsp;()&nbsp;and&nbsp;the</tt></dd>
+<dd><tt>allocation&nbsp;in&nbsp;CClp_loadlp.</tt></dd>
+<a NAME="CClp_freelp"></a>
+<h2>CClp_freelp</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CClp_freelp&nbsp;(CClp&nbsp;**lp)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>FREES&nbsp;the&nbsp;LP&nbsp;loaded&nbsp;in&nbsp;CClp_loadlp&nbsp;(or&nbsp;CClp_create),&nbsp;but&nbsp;does</tt></dd>
+<dd><tt>not&nbsp;free&nbsp;the&nbsp;data&nbsp;allocated&nbsp;by&nbsp;CClp_init.</tt></dd>
+<a NAME="CClp_loadlp"></a>
+<h2>CClp_loadlp</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_loadlp&nbsp;(CClp&nbsp;*lp,&nbsp;const&nbsp;char&nbsp;*name,&nbsp;int&nbsp;ncols,&nbsp;int&nbsp;nrows,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;objsense,&nbsp;double&nbsp;*obj,&nbsp;double&nbsp;*rhs,&nbsp;char&nbsp;*sense,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*matbeg,&nbsp;int&nbsp;*matcnt,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*matind,&nbsp;double&nbsp;*matval,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;double&nbsp;*lb,&nbsp;double&nbsp;*ub)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>LOADS&nbsp;the&nbsp;data&nbsp;into&nbsp;the&nbsp;LP.</tt></dd>
+<dd><tt>&nbsp;&nbsp;-name&nbsp;attaches&nbsp;a&nbsp;name&nbsp;to&nbsp;the&nbsp;LP&nbsp;(it&nbsp;can&nbsp;be&nbsp;used&nbsp;by&nbsp;the&nbsp;LP&nbsp;solver</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;in&nbsp;io&nbsp;routines)</tt></dd>
+<dd><tt>&nbsp;&nbsp;-ncols&nbsp;and&nbsp;nrows&nbsp;give&nbsp;the&nbsp;number&nbsp;of&nbsp;columns&nbsp;and&nbsp;rows&nbsp;in&nbsp;the&nbsp;LP</tt></dd>
+<dd><tt>&nbsp;&nbsp;-objsense&nbsp;should&nbsp;be&nbsp;1&nbsp;for&nbsp;minimize&nbsp;and&nbsp;-1&nbsp;for&nbsp;maximize</tt></dd>
+<dd><tt>&nbsp;&nbsp;-obj&nbsp;and&nbsp;rhs&nbsp;are&nbsp;arrays&nbsp;giving&nbsp;the&nbsp;objective&nbsp;function&nbsp;and&nbsp;rhs</tt></dd>
+<dd><tt>&nbsp;&nbsp;-sense&nbsp;is&nbsp;an&nbsp;array&nbsp;specifying&nbsp;'L',&nbsp;'E',&nbsp;or&nbsp;'G'&nbsp;for&nbsp;each&nbsp;of&nbsp;the</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;rows</tt></dd>
+<dd><tt>&nbsp;&nbsp;-matbeg,&nbsp;matcnt,&nbsp;matind,&nbsp;and&nbsp;matval&nbsp;give&nbsp;the&nbsp;coefficients&nbsp;of</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;the&nbsp;constraint&nbsp;matrix&nbsp;in&nbsp;column&nbsp;by&nbsp;column&nbsp;order.&nbsp;matbeg&nbsp;gives</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;gives&nbsp;the&nbsp;index&nbsp;of&nbsp;the&nbsp;start&nbsp;of&nbsp;each&nbsp;column;&nbsp;matcnt&nbsp;gives&nbsp;the</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;number&nbsp;of&nbsp;coefficients&nbsp;in&nbsp;each&nbsp;column;&nbsp;matind&nbsp;gives&nbsp;the&nbsp;indices</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;of&nbsp;the&nbsp;rows&nbsp;where&nbsp;the&nbsp;coefficients&nbsp;are&nbsp;located&nbsp;in&nbsp;the&nbsp;constraint</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;matrix&nbsp;(so&nbsp;for&nbsp;column&nbsp;j,&nbsp;the&nbsp;indices&nbsp;are&nbsp;given&nbsp;in&nbsp;matcnt[j]</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;locations&nbsp;starting&nbsp;at&nbsp;matind[matbeg[j]];&nbsp;and&nbsp;matval&nbsp;gives&nbsp;the</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;actual&nbsp;coefficients&nbsp;(organized&nbsp;like&nbsp;matind).</tt></dd>
+<dd><tt>&nbsp;&nbsp;-lb&nbsp;and&nbsp;ub&nbsp;are&nbsp;arrays&nbsp;giving&nbsp;the&nbsp;upper&nbsp;and&nbsp;lower&nbsp;bounds&nbsp;of</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;the&nbsp;variables.</tt></dd>
+<a NAME="CClp_create"></a>
+<h2>CClp_create</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_create&nbsp;(CClp&nbsp;*lp,&nbsp;const&nbsp;char&nbsp;*name)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>CREATES&nbsp;an&nbsp;empty&nbsp;lp.&nbsp;&nbsp;This&nbsp;supports&nbsp;an&nbsp;alternative&nbsp;to&nbsp;CClp_loadlp</tt></dd>
+<dd><tt>for&nbsp;loading&nbsp;a&nbsp;problem.</tt></dd>
+<dd><tt>&nbsp;&nbsp;-name&nbsp;attaches&nbsp;a&nbsp;name&nbsp;to&nbsp;the&nbsp;LP&nbsp;(it&nbsp;can&nbsp;be&nbsp;used&nbsp;by&nbsp;the&nbsp;LP&nbsp;solver</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;in&nbsp;io&nbsp;routines)</tt></dd>
+<a NAME="CClp_new_row"></a>
+<h2>CClp_new_row</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_new_row&nbsp;(CClp&nbsp;*lp,&nbsp;char&nbsp;sense,&nbsp;double&nbsp;rhs)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>ADDS&nbsp;a&nbsp;new&nbsp;empty&nbsp;row&nbsp;to&nbsp;the&nbsp;lp</tt></dd>
+<dd><tt>&nbsp;&nbsp;-sense&nbsp;is&nbsp;'L',&nbsp;'E',&nbsp;or&nbsp;'G'&nbsp;for&nbsp;a&nbsp;<=,&nbsp;=,&nbsp;or&nbsp;>=&nbsp;constraint</tt></dd>
+<dd><tt>&nbsp;&nbsp;-rhs&nbsp;is&nbsp;the&nbsp;right-hand&nbsp;side&nbsp;of&nbsp;the&nbsp;row</tt></dd>
+<a NAME="CClp_change_sense"></a>
+<h2>CClp_change_sense</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_change_sense&nbsp;(CClp&nbsp;*lp,&nbsp;int&nbsp;row,&nbsp;char&nbsp;sense)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>CHANGES&nbsp;the&nbsp;sense&nbsp;of&nbsp;a&nbsp;row</tt></dd>
+<dd><tt>&nbsp;&nbsp;-row&nbsp;is&nbsp;the&nbsp;row&nbsp;number&nbsp;to&nbsp;change</tt></dd>
+<dd><tt>&nbsp;&nbsp;-sense&nbsp;is&nbsp;'L',&nbsp;'E',&nbsp;or&nbsp;'G'&nbsp;to&nbsp;change&nbsp;to&nbsp;<=,&nbsp;=,&nbsp;or&nbsp;>=</tt></dd>
+<a NAME="CClp_opt"></a>
+<h2>CClp_opt</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_opt&nbsp;(CClp&nbsp;*lp,&nbsp;int&nbsp;method)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>CALLS&nbsp;designated&nbsp;LP&nbsp;solution&nbsp;method.</tt></dd>
+<a NAME="CClp_limited_dualopt"></a>
+<h2>CClp_limited_dualopt</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_limited_dualopt&nbsp;(CClp&nbsp;*lp,&nbsp;int&nbsp;lim,&nbsp;int&nbsp;*status,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;double&nbsp;*upperbound)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>CALLS&nbsp;the&nbsp;dual&nbsp;simplex&nbsp;method&nbsp;with&nbsp;a&nbsp;limit&nbsp;on&nbsp;the&nbsp;number&nbsp;of&nbsp;pivots.</tt></dd>
+<dd><tt>&nbsp;&nbsp;-upperbound&nbsp;it&nbsp;is&nbsp;used&nbsp;to&nbsp;cutoff&nbsp;the&nbsp;dual&nbsp;simplex&nbsp;method&nbsp;(when</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;the&nbsp;objective&nbsp;value&nbsp;reaches&nbsp;upperbound);&nbsp;it&nbsp;can&nbsp;be&nbsp;NULL</tt></dd>
+<dd><tt>&nbsp;&nbsp;-status&nbsp;returns&nbsp;the&nbsp;status&nbsp;of&nbsp;the&nbsp;optimization&nbsp;(it&nbsp;can&nbsp;be&nbsp;NULL)</tt></dd>
+<a NAME="CClp_addrows"></a>
+<h2>CClp_addrows</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_addrows&nbsp;(CClp&nbsp;*lp,&nbsp;int&nbsp;newrows,&nbsp;int&nbsp;newnz,&nbsp;double&nbsp;*rhs,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;char&nbsp;*sense,&nbsp;int&nbsp;*rmatbeg,&nbsp;int&nbsp;*rmatind,&nbsp;double&nbsp;*rmatval)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>ADDS&nbsp;the&nbsp;rows&nbsp;to&nbsp;the&nbsp;LP.</tt></dd>
+<dd><tt>&nbsp;&nbsp;-newrows&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;rows&nbsp;to&nbsp;be&nbsp;added</tt></dd>
+<dd><tt>&nbsp;&nbsp;-newnz&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;nonzero&nbsp;coefficients&nbsp;in&nbsp;the&nbsp;new&nbsp;rows</tt></dd>
+<dd><tt>&nbsp;&nbsp;-rhs&nbsp;is&nbsp;an&nbsp;array&nbsp;of&nbsp;the&nbsp;rhs&nbsp;values&nbsp;for&nbsp;the&nbsp;new&nbsp;rows</tt></dd>
+<dd><tt>&nbsp;&nbsp;-sense&nbsp;is&nbsp;'L',&nbsp;'E',&nbsp;or&nbsp;'G'&nbsp;for&nbsp;each&nbsp;of&nbsp;the&nbsp;new&nbsp;rows</tt></dd>
+<dd><tt>&nbsp;&nbsp;-rmatbeg,&nbsp;rmatind,&nbsp;and&nbsp;rmatval&nbsp;give&nbsp;the&nbsp;coefficients&nbsp;of&nbsp;the</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;new&nbsp;rows&nbsp;in&nbsp;sparse&nbsp;format.&nbsp;The&nbsp;arrays&nbsp;can&nbsp;be&nbsp;freed&nbsp;after&nbsp;the</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;call.</tt></dd>
+<a NAME="CClp_addcols"></a>
+<h2>CClp_addcols</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_addcols&nbsp;(CClp&nbsp;*lp,&nbsp;int&nbsp;newcols,&nbsp;int&nbsp;newnz,&nbsp;double&nbsp;*obj,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*cmatbeg,&nbsp;int&nbsp;*cmatind,&nbsp;double&nbsp;*cmatval,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;double&nbsp;*lb,&nbsp;double&nbsp;*ub)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>ADDS&nbsp;the&nbsp;columns&nbsp;to&nbsp;the&nbsp;LP.</tt></dd>
+<a NAME="CClp_delete_row"></a>
+<h2>CClp_delete_row</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_delete_row&nbsp;(CClp&nbsp;*lp,&nbsp;int&nbsp;i)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>DELETES&nbsp;row&nbsp;i&nbsp;of&nbsp;the&nbsp;LP.</tt></dd>
+<a NAME="CClp_delete_set_of_rows"></a>
+<h2>CClp_delete_set_of_rows</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_delete_set_of_rows&nbsp;(CClp&nbsp;*lp,&nbsp;int&nbsp;*delstat)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>DELETES&nbsp;the&nbsp;rows&nbsp;corresponding&nbsp;to&nbsp;1&nbsp;entries&nbsp;in&nbsp;delstat.</tt></dd>
+<dd><tt>&nbsp;&nbsp;-delstat&nbsp;is&nbsp;a&nbsp;0/1&nbsp;array&nbsp;having&nbsp;an&nbsp;entry&nbsp;for&nbsp;each&nbsp;row</tt></dd>
+<a NAME="CClp_delete_column"></a>
+<h2>CClp_delete_column</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_delete_column&nbsp;(CClp&nbsp;*lp,&nbsp;int&nbsp;i)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>DELETES&nbsp;column&nbsp;i&nbsp;from&nbsp;the&nbsp;LP.</tt></dd>
+<a NAME="CClp_delete_set_of_columns"></a>
+<h2>CClp_delete_set_of_columns</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_delete_set_of_columns&nbsp;(CClp&nbsp;*lp,&nbsp;int&nbsp;*delstat)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>DELETES&nbsp;the&nbsp;columns&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;1&nbsp;entries&nbsp;in&nbsp;delstat.</tt></dd>
+<dd><tt>&nbsp;&nbsp;-delstat&nbsp;is&nbsp;a&nbsp;0/1&nbsp;array&nbsp;having&nbsp;an&nbsp;entry&nbsp;for&nbsp;each&nbsp;column</tt></dd>
+<a NAME="CClp_setbnd"></a>
+<h2>CClp_setbnd</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_setbnd&nbsp;(CClp&nbsp;*lp,&nbsp;int&nbsp;col,&nbsp;char&nbsp;lower_or_upper,&nbsp;double&nbsp;bnd)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>SETS&nbsp;the&nbsp;bound&nbsp;on&nbsp;the&nbsp;variable&nbsp;index&nbsp;by&nbsp;col.</tt></dd>
+<dd><tt>&nbsp;&nbsp;-lower_or_upper&nbsp;should&nbsp;be&nbsp;either&nbsp;'L'&nbsp;or&nbsp;'U'</tt></dd>
+<a NAME="CClp_get_warmstart"></a>
+<h2>CClp_get_warmstart</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_get_warmstart&nbsp;(CClp&nbsp;*lp,&nbsp;CClp_warmstart&nbsp;**w)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>SAVES&nbsp;information&nbsp;for&nbsp;efficiently&nbsp;resolving&nbsp;the&nbsp;current&nbsp;lp&nbsp;in&nbsp;w,</tt></dd>
+<dd><tt>for&nbsp;example,&nbsp;basis&nbsp;or&nbsp;norm&nbsp;information</tt></dd>
+<a NAME="CClp_load_warmstart"></a>
+<h2>CClp_load_warmstart</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_load_warmstart&nbsp;(CClp&nbsp;*lp,&nbsp;CClp_warmstart&nbsp;*w)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>RESTORES&nbsp;the&nbsp;warmstart&nbsp;information&nbsp;in&nbsp;w.</tt></dd>
+<a NAME="CClp_build_warmstart"></a>
+<h2>CClp_build_warmstart</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_build_warmstart&nbsp;(CClp_warmstart&nbsp;**w,&nbsp;CClp_info&nbsp;*i)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>BUILDS&nbsp;some&nbsp;warmstart&nbsp;information&nbsp;from&nbsp;the&nbsp;row/column&nbsp;information</tt></dd>
+<dd><tt>in&nbsp;i.</tt></dd>
+<a NAME="CClp_free_warmstart"></a>
+<h2>CClp_free_warmstart</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CClp_free_warmstart&nbsp;(CClp_warmstart&nbsp;**w)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>FREES&nbsp;the&nbsp;memory&nbsp;used&nbsp;by&nbsp;w.</tt></dd>
+<a NAME="CClp_sread_warmstart"></a>
+<h2>CClp_sread_warmstart</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_sread_warmstart&nbsp;(CC_SFILE&nbsp;*f,&nbsp;CClp_warmstart&nbsp;**w)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>READS&nbsp;warmstart&nbsp;information&nbsp;from&nbsp;the&nbsp;f.</tt></dd>
+<a NAME="CClp_swrite_warmstart"></a>
+<h2>CClp_swrite_warmstart</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_swrite_warmstart&nbsp;(CC_SFILE&nbsp;*f,&nbsp;CClp_warmstart&nbsp;*w)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>WRITES&nbsp;warmstart&nbsp;information&nbsp;from&nbsp;the&nbsp;f.</tt></dd>
+<a NAME="CClp_get_info"></a>
+<h2>CClp_get_info</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_get_info&nbsp;(CClp&nbsp;*lp,&nbsp;CClp_info&nbsp;**i)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>BUILDS&nbsp;information&nbsp;useful&nbsp;for&nbsp;efficiently&nbsp;answering&nbsp;questions</tt></dd>
+<dd><tt>about&nbsp;the&nbsp;status&nbsp;of&nbsp;rows&nbsp;and&nbsp;columns</tt></dd>
+<a NAME="CClp_create_info"></a>
+<h2>CClp_create_info</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_create_info&nbsp;(CClp_info&nbsp;**i,&nbsp;int&nbsp;rcount,&nbsp;int&nbsp;ccount)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>CREATES&nbsp;a&nbsp;structure&nbsp;for&nbsp;storing&nbsp;information&nbsp;about&nbsp;the&nbsp;status&nbsp;of</tt></dd>
+<dd><tt>rows&nbsp;and&nbsp;columns.</tt></dd>
+<a NAME="CClp_is_col_active"></a>
+<h2>CClp_is_col_active</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_is_col_active&nbsp;(CClp_info&nbsp;*i,&nbsp;int&nbsp;c)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>returns&nbsp;1&nbsp;if&nbsp;column&nbsp;e&nbsp;is&nbsp;active,&nbsp;0&nbsp;otherwise.</tt></dd>
+<dd><tt>"active"&nbsp;means&nbsp;participating&nbsp;in&nbsp;the&nbsp;current&nbsp;solution&nbsp;(for&nbsp;example,</tt></dd>
+<dd><tt>it&nbsp;could&nbsp;mean&nbsp;basic&nbsp;or&nbsp;nonbasic&nbsp;at&nbsp;upper&nbsp;bound)</tt></dd>
+<a NAME="CClp_is_row_active"></a>
+<h2>CClp_is_row_active</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_is_row_active&nbsp;(CClp_info&nbsp;*i,&nbsp;int&nbsp;r)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>returns&nbsp;1&nbsp;if&nbsp;row&nbsp;e&nbsp;is&nbsp;active,&nbsp;0&nbsp;otherwise.</tt></dd>
+<dd><tt>"active"&nbsp;means&nbsp;participating&nbsp;in&nbsp;the&nbsp;current&nbsp;solution&nbsp;(for&nbsp;example,</tt></dd>
+<dd><tt>it&nbsp;could&nbsp;mean&nbsp;the&nbsp;row's&nbsp;slack&nbsp;is&nbsp;non-basic)</tt></dd>
+<a NAME="CClp_set_col_active"></a>
+<h2>CClp_set_col_active</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CClp_set_col_active&nbsp;(CClp_info&nbsp;*i,&nbsp;int&nbsp;c)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>marks&nbsp;column&nbsp;e&nbsp;as&nbsp;active&nbsp;(for&nbsp;eventual&nbsp;CClp_build_warmstart)</tt></dd>
+<a NAME="CClp_set_col_inactive"></a>
+<h2>CClp_set_col_inactive</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CClp_set_col_inactive&nbsp;(CClp_info&nbsp;*i,&nbsp;int&nbsp;c)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>marks&nbsp;column&nbsp;e&nbsp;as&nbsp;inactive&nbsp;(for&nbsp;eventual&nbsp;CClp_build_warmstart)</tt></dd>
+<a NAME="CClp_set_col_upper"></a>
+<h2>CClp_set_col_upper</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CClp_set_col_upper&nbsp;(CClp_info&nbsp;*i,&nbsp;int&nbsp;c)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>marks&nbsp;column&nbsp;e&nbsp;as&nbsp;active&nbsp;at&nbsp;upper&nbsp;bound&nbsp;(for&nbsp;eventual</tt></dd>
+<dd><tt>CClp_build_warmstart)</tt></dd>
+<a NAME="CClp_set_row_active"></a>
+<h2>CClp_set_row_active</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CClp_set_row_active&nbsp;(CClp_info&nbsp;*i,&nbsp;int&nbsp;r)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>marks&nbsp;row&nbsp;r&nbsp;as&nbsp;active&nbsp;(for&nbsp;eventual&nbsp;CClp_build_warmstart)</tt></dd>
+<a NAME="CClp_set_row_inactive"></a>
+<h2>CClp_set_row_inactive</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CClp_set_row_inactive&nbsp;(CClp_info&nbsp;*i,&nbsp;int&nbsp;r)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>marks&nbsp;row&nbsp;r&nbsp;as&nbsp;inactive&nbsp;(for&nbsp;eventual&nbsp;CClp_build_warmstart)</tt></dd>
+<a NAME="CClp_free_info"></a>
+<h2>CClp_free_info</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CClp_free_info&nbsp;(CClp_info&nbsp;**i)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>FREES&nbsp;the&nbsp;memory&nbsp;used&nbsp;by&nbsp;i.</tt></dd>
+<a NAME="CClp_x"></a>
+<h2>CClp_x</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_x&nbsp;(CClp&nbsp;*lp,&nbsp;double&nbsp;*x)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>RETURNS&nbsp;the&nbsp;current&nbsp;LP&nbsp;solution.</tt></dd>
+<dd><tt>&nbsp;&nbsp;-x&nbsp;should&nbsp;be&nbsp;an&nbsp;array&nbsp;of&nbsp;length&nbsp;at&nbsp;least&nbsp;ncols</tt></dd>
+<a NAME="CClp_rc"></a>
+<h2>CClp_rc</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_rc&nbsp;(CClp&nbsp;*lp,&nbsp;double&nbsp;*rc)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>RETURNS&nbsp;the&nbsp;current&nbsp;reduced&nbsp;costs.</tt></dd>
+<dd><tt>&nbsp;&nbsp;-rc&nbsp;should&nbsp;be&nbsp;an&nbsp;array&nbsp;of&nbsp;length&nbsp;at&nbsp;least&nbsp;ncols</tt></dd>
+<a NAME="CClp_pi"></a>
+<h2>CClp_pi</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_pi&nbsp;(CClp&nbsp;*lp,&nbsp;double&nbsp;*pi)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>RETURNS&nbsp;the&nbsp;dual&nbsp;values&nbsp;on&nbsp;the&nbsp;constraints.</tt></dd>
+<dd><tt>&nbsp;&nbsp;-pi&nbsp;should&nbsp;be&nbsp;an&nbsp;array&nbsp;of&nbsp;length&nbsp;at&nbsp;least&nbsp;nrows</tt></dd>
+<dd><tt>NOTES:&nbsp;If&nbsp;the&nbsp;lp&nbsp;and&nbsp;dual&nbsp;lp&nbsp;are&nbsp;feasible,&nbsp;these&nbsp;pi&nbsp;values&nbsp;are</tt></dd>
+<dd><tt>&nbsp;&nbsp;the&nbsp;traditional&nbsp;dual&nbsp;solution.&nbsp;&nbsp;If&nbsp;the&nbsp;dual&nbsp;is&nbsp;unbounded,&nbsp;these</tt></dd>
+<dd><tt>&nbsp;&nbsp;pi&nbsp;satisfy</tt></dd>
+<dd><tt></tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;pi_i&nbsp;<=&nbsp;0&nbsp;&nbsp;for&nbsp;<=&nbsp;constraints</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;pi_i&nbsp;>=&nbsp;0&nbsp;&nbsp;for&nbsp;>=&nbsp;constraints</tt></dd>
+<dd><tt></tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;pi'b&nbsp;-&nbsp;sum&nbsp;(pi'A_j&nbsp;*&nbsp;u_j:&nbsp;pi'A_j&nbsp;>&nbsp;0)</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;sum&nbsp;(pi'A_j&nbsp;*&nbsp;l_j:&nbsp;pi'A_j&nbsp;<&nbsp;0)&nbsp;>&nbsp;0</tt></dd>
+<dd><tt></tt></dd>
+<dd><tt>where&nbsp;b&nbsp;is&nbsp;the&nbsp;rhs&nbsp;vector,&nbsp;u_j&nbsp;is&nbsp;the&nbsp;upper&nbsp;bound&nbsp;on&nbsp;variable&nbsp;x_j,</tt></dd>
+<dd><tt>l_j&nbsp;the&nbsp;lower&nbsp;bound,&nbsp;and&nbsp;A_j&nbsp;the&nbsp;constraint&nbsp;matrix&nbsp;column&nbsp;for&nbsp;x_j.</tt></dd>
+<a NAME="CClp_objval"></a>
+<h2>CClp_objval</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_objval&nbsp;(CClp&nbsp;*lp,&nbsp;double&nbsp;*obj)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>RETURNS&nbsp;the&nbsp;objective&nbsp;value&nbsp;of&nbsp;the&nbsp;lp.</tt></dd>
+<a NAME="CClp_nrows"></a>
+<h2>CClp_nrows</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_nrows&nbsp;(CClp&nbsp;*lp)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>RETURNS&nbsp;the&nbsp;number&nbsp;of&nbsp;rows&nbsp;in&nbsp;the&nbsp;LP.</tt></dd>
+<a NAME="CClp_ncols"></a>
+<h2>CClp_ncols</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_ncols&nbsp;(CClp&nbsp;*lp)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>RETURNS&nbsp;the&nbsp;number&nbsp;of&nbsp;columns&nbsp;in&nbsp;the&nbsp;LP.</tt></dd>
+<a NAME="CClp_nnonzeros"></a>
+<h2>CClp_nnonzeros</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_nnonzeros&nbsp;(CClp&nbsp;*lp)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>RETURNS&nbsp;the&nbsp;number&nbsp;of&nbsp;nonzeros&nbsp;in&nbsp;the&nbsp;LP.</tt></dd>
+<a NAME="CClp_status"></a>
+<h2>CClp_status</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_status&nbsp;(CClp&nbsp;*lp,&nbsp;int&nbsp;*status)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>CHECKS&nbsp;whether&nbsp;the&nbsp;current&nbsp;lp&nbsp;is&nbsp;infeasible&nbsp;or&nbsp;whether&nbsp;an&nbsp;optimal</tt></dd>
+<dd><tt>&nbsp;solution&nbsp;has&nbsp;been&nbsp;found.&nbsp;It&nbsp;returns&nbsp;an&nbsp;error&nbsp;if&nbsp;the&nbsp;LP&nbsp;has&nbsp;not</tt></dd>
+<dd><tt>&nbsp;not&nbsp;been&nbsp;optimized.</tt></dd>
+<dd><tt>&nbsp;&nbsp;-lp&nbsp;is&nbsp;the&nbsp;lp</tt></dd>
+<dd><tt>&nbsp;&nbsp;-status&nbsp;returns&nbsp;0&nbsp;if&nbsp;the&nbsp;lp&nbsp;has&nbsp;an&nbsp;optimal&nbsp;solution&nbsp;and&nbsp;1&nbsp;if&nbsp;it</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;is&nbsp;infeasible.</tt></dd>
+<a NAME="CClp_getweight"></a>
+<h2>CClp_getweight</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_getweight&nbsp;(CClp&nbsp;*lp,&nbsp;int&nbsp;nrows,&nbsp;int&nbsp;*rmatbeg,&nbsp;int&nbsp;*rmatind,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;double&nbsp;*rmatval,&nbsp;double&nbsp;*weight)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>COMPUTES&nbsp;the&nbsp;duals&nbsp;of&nbsp;the&nbsp;steepest&nbsp;edge&nbsp;norms&nbsp;for&nbsp;the&nbsp;n&nbsp;rows</tt></dd>
+<dd><tt>&nbsp;specified&nbsp;in&nbsp;rmatbeg,&nbsp;rmatind,&nbsp;and&nbsp;rmatval.</tt></dd>
+<dd><tt>&nbsp;&nbsp;-weight&nbsp;returns&nbsp;the&nbsp;array&nbsp;of&nbsp;weights;&nbsp;the&nbsp;array&nbsp;should&nbsp;be&nbsp;at</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;least&nbsp;nrows&nbsp;long</tt></dd>
+<a NAME="CClp_dump_lp"></a>
+<h2>CClp_dump_lp</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_dump_lp&nbsp;(CClp&nbsp;*lp,&nbsp;const&nbsp;char&nbsp;*fname)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>WRITES&nbsp;the&nbsp;LP&nbsp;to&nbsp;file&nbsp;fname.</tt></dd>
+<a NAME="CClp_getgoodlist"></a>
+<h2>CClp_getgoodlist</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_getgoodlist&nbsp;(CClp&nbsp;*lp,&nbsp;int&nbsp;*goodlist,&nbsp;int&nbsp;*goodlen_p,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;double&nbsp;*downpen,&nbsp;double&nbsp;*uppen)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>RETURNS&nbsp;an&nbsp;array&nbsp;of&nbsp;the&nbsp;column&nbsp;indices&nbsp;corresponding&nbsp;to&nbsp;variables</tt></dd>
+<dd><tt>&nbsp;that&nbsp;move&nbsp;in&nbsp;both&nbsp;the&nbsp;up&nbsp;and&nbsp;down&nbsp;directions.&nbsp;This&nbsp;is&nbsp;a&nbsp;useful</tt></dd>
+<dd><tt>&nbsp;list&nbsp;of&nbsp;candidates&nbsp;for&nbsp;strong&nbsp;branching.</tt></dd>
+<dd><tt>&nbsp;&nbsp;-goodlist,&nbsp;downpen&nbsp;and&nbsp;uppen&nbsp;should&nbsp;be&nbsp;arrays&nbsp;of&nbsp;length&nbsp;at</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;least&nbsp;ncols.</tt></dd>
+<a NAME="CClp_strongbranch"></a>
+<h2>CClp_strongbranch</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClp_strongbranch&nbsp;(CClp&nbsp;*lp,&nbsp;int&nbsp;*candidatelist,&nbsp;int&nbsp;ncand,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;double&nbsp;*downpen,&nbsp;double&nbsp;*uppen,&nbsp;int&nbsp;iterations,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;double&nbsp;upperbound)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>RETURNS&nbsp;estimates&nbsp;of&nbsp;the&nbsp;lp&nbsp;values&nbsp;obtained&nbsp;by&nbsp;setting&nbsp;each&nbsp;of&nbsp;the</tt></dd>
+<dd><tt>&nbsp;&nbsp;ncand&nbsp;variables&nbsp;listed&nbsp;in&nbsp;candidatelist&nbsp;to&nbsp;0&nbsp;and&nbsp;1.&nbsp;The&nbsp;estimates</tt></dd>
+<dd><tt>&nbsp;&nbsp;are&nbsp;obtained&nbsp;by&nbsp;performing&nbsp;iterations&nbsp;pivots&nbsp;of&nbsp;dual&nbsp;simplex</tt></dd>
+<dd><tt>&nbsp;&nbsp;method.&nbsp;upperbound&nbsp;is&nbsp;used&nbsp;to&nbsp;cutoff&nbsp;the&nbsp;dual&nbsp;simplex&nbsp;method.</tt></dd>
+<dd><tt>&nbsp;&nbsp;downpen&nbsp;and&nbsp;uppen&nbsp;should&nbsp;never&nbsp;be&nbsp;>&nbsp;upperbound.</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;-downpen&nbsp;and&nbsp;uppen&nbsp;should&nbsp;be&nbsp;arrays&nbsp;of&nbsp;length&nbsp;at&nbsp;least&nbsp;ncand</tt></dd>
+<a NAME="CClp_pivotout"></a>
+<h2>CClp_pivotout</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CClp_pivotout&nbsp;(CClp&nbsp;*lp,&nbsp;int&nbsp;j)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+<a NAME="CClp_pivotin"></a>
+<h2>CClp_pivotin</h2>
+<dt>File:</dt>
+<dd><tt>LP/lp_none.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>lp.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CClp_pivotin&nbsp;(CClp&nbsp;*lp,&nbsp;int&nbsp;i)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>MISSING</tt></dd>
+</body>
+</html>

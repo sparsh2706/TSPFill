@@ -1,0 +1,1 @@
+C:\Python27\python D:\SoftCorner\TSP\tspart.py D:\SoftCorner\TSP\pic.PBM

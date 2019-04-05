@@ -1,0 +1,120 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>Concorde combs.h functions</title>
+</head>
+<body>
+<center><h1>Concorde combs.h functions</h1></center>
+<h2><a href="concorde_org.html">Organizational index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_funcs.html">Function index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_prog.html">Program index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_macro.html">Macro index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_types.html">Data Types index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+</h2><a NAME="CCcombs_greedy_cut"></a>
+<h2>CCcombs_greedy_cut</h2>
+<dt>File:</dt>
+<dd><tt>COMBS/dngreedy.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>combs.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCcombs_greedy_cut&nbsp;(CC_GCgraph&nbsp;*g,&nbsp;int&nbsp;*setsize,&nbsp;int&nbsp;*set,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;mark_fixed,&nbsp;int&nbsp;forced_moves,&nbsp;int&nbsp;bad_moves,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;fixed_moves,&nbsp;int&nbsp;*moves_done,&nbsp;double&nbsp;*cut_val)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>RETURNS&nbsp;a&nbsp;set&nbsp;of&nbsp;nodes&nbsp;of&nbsp;having&nbsp;a&nbsp;small&nbsp;coboundary.</tt></dd>
+<dd><tt>&nbsp;-g&nbsp;is&nbsp;the&nbsp;graph&nbsp;to&nbsp;grow&nbsp;in,&nbsp;including&nbsp;marks</tt></dd>
+<dd><tt>&nbsp;-setsize&nbsp;is&nbsp;the&nbsp;size&nbsp;of&nbsp;the&nbsp;set&nbsp;(modified&nbsp;by&nbsp;greedy)</tt></dd>
+<dd><tt>&nbsp;-set&nbsp;is&nbsp;the&nbsp;set&nbsp;of&nbsp;vertices&nbsp;(modified&nbsp;by&nbsp;greedy).&nbsp;This&nbsp;should</tt></dd>
+<dd><tt>&nbsp;&nbsp;point&nbsp;to&nbsp;an&nbsp;array&nbsp;of&nbsp;size&nbsp;g->ncount&nbsp;(to&nbsp;handle&nbsp;any&nbsp;size&nbsp;set).</tt></dd>
+<dd><tt>&nbsp;-mark_fixed,&nbsp;nodes&nbsp;with&nbsp;this&nbsp;mark&nbsp;are&nbsp;fixed&nbsp;(forbidden&nbsp;from</tt></dd>
+<dd><tt>&nbsp;&nbsp;entering&nbsp;or&nbsp;leaving&nbsp;the&nbsp;set)</tt></dd>
+<dd><tt>&nbsp;-forced_moves,&nbsp;make&nbsp;at&nbsp;least&nbsp;this&nbsp;many&nbsp;moves,&nbsp;even&nbsp;if&nbsp;they&nbsp;make</tt></dd>
+<dd><tt>&nbsp;&nbsp;the&nbsp;cut&nbsp;worse.&nbsp;&nbsp;If&nbsp;a&nbsp;move&nbsp;is&nbsp;forced&nbsp;(ie,&nbsp;would&nbsp;not&nbsp;have&nbsp;happened</tt></dd>
+<dd><tt>&nbsp;&nbsp;otherwise)&nbsp;then&nbsp;the&nbsp;result&nbsp;is&nbsp;fixed.</tt></dd>
+<dd><tt>&nbsp;-bad_moves,&nbsp;make&nbsp;at&nbsp;least&nbsp;this&nbsp;many&nbsp;moves&nbsp;that&nbsp;make&nbsp;the&nbsp;cut&nbsp;worse.</tt></dd>
+<dd><tt>&nbsp;&nbsp;The&nbsp;result&nbsp;of&nbsp;the&nbsp;bad&nbsp;move&nbsp;is&nbsp;fixed.</tt></dd>
+<dd><tt>&nbsp;-fixed_moves,&nbsp;make&nbsp;at&nbsp;least&nbsp;this&nbsp;many&nbsp;moves,&nbsp;even&nbsp;if&nbsp;they&nbsp;make</tt></dd>
+<dd><tt>&nbsp;&nbsp;the&nbsp;cut&nbsp;worse.&nbsp;&nbsp;Fix&nbsp;the&nbsp;result&nbsp;of&nbsp;each&nbsp;of&nbsp;these&nbsp;moves.</tt></dd>
+<dd><tt>&nbsp;-moves_done,&nbsp;if&nbsp;non-NULL,&nbsp;should&nbsp;point&nbsp;to&nbsp;an&nbsp;int&nbsp;which&nbsp;will&nbsp;be</tt></dd>
+<dd><tt>&nbsp;&nbsp;set&nbsp;to&nbsp;1&nbsp;if&nbsp;all&nbsp;of&nbsp;the&nbsp;forced&nbsp;moves,&nbsp;bad&nbsp;moves,&nbsp;and&nbsp;fixed&nbsp;moves</tt></dd>
+<dd><tt>&nbsp;&nbsp;were&nbsp;made,&nbsp;and&nbsp;0&nbsp;if&nbsp;the&nbsp;cut&nbsp;ran&nbsp;out&nbsp;of&nbsp;available&nbsp;nodes&nbsp;before</tt></dd>
+<dd><tt>&nbsp;&nbsp;making&nbsp;the&nbsp;required&nbsp;moves.</tt></dd>
+<dd><tt>&nbsp;-cut_val&nbsp;is&nbsp;the&nbsp;set's&nbsp;cut&nbsp;value&nbsp;(set&nbsp;by&nbsp;greedy)</tt></dd>
+<dd><tt>NOTES:</tt></dd>
+<dd><tt>&nbsp;-assumes&nbsp;that&nbsp;status&nbsp;is&nbsp;0&nbsp;for&nbsp;every&nbsp;node&nbsp;in&nbsp;g,&nbsp;and&nbsp;restores</tt></dd>
+<dd><tt>&nbsp;&nbsp;this&nbsp;condition&nbsp;on&nbsp;successful&nbsp;exit</tt></dd>
+<dd><tt>&nbsp;-modifies&nbsp;the&nbsp;node&nbsp;fields&nbsp;qhandle,&nbsp;flow,&nbsp;setloc,&nbsp;setdeg,&nbsp;status</tt></dd>
+<a NAME="CCcombs_GC_build_graph"></a>
+<h2>CCcombs_GC_build_graph</h2>
+<dt>File:</dt>
+<dd><tt>COMBS/dngreedy.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>combs.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCcombs_GC_build_graph&nbsp;(CC_GCgraph&nbsp;*G,&nbsp;int&nbsp;ncount,&nbsp;int&nbsp;ecount,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*elist,&nbsp;double&nbsp;*x)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>BUILDS&nbsp;the&nbsp;graph&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;edge&nbsp;lists,&nbsp;using&nbsp;x&nbsp;for&nbsp;the</tt></dd>
+<dd><tt>&nbsp;weights&nbsp;on&nbsp;the&nbsp;edges.</tt></dd>
+<a NAME="CCcombs_GC_init_graph"></a>
+<h2>CCcombs_GC_init_graph</h2>
+<dt>File:</dt>
+<dd><tt>COMBS/dngreedy.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>combs.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CCcombs_GC_init_graph&nbsp;(CC_GCgraph&nbsp;*G)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>INITIALIZES&nbsp;the&nbsp;fields&nbsp;of&nbsp;the&nbsp;graph&nbsp;struct&nbsp;to&nbsp;NULL.</tt></dd>
+<a NAME="CCcombs_GC_free_graph"></a>
+<h2>CCcombs_GC_free_graph</h2>
+<dt>File:</dt>
+<dd><tt>COMBS/dngreedy.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>combs.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CCcombs_GC_free_graph&nbsp;(CC_GCgraph&nbsp;*G)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>FREES&nbsp;the&nbsp;fields&nbsp;of&nbsp;the&nbsp;graph&nbsp;struct.</tt></dd>
+<dd><tt></tt></dd>
+<dd><tt>NOTES:&nbsp;differences&nbsp;from&nbsp;Denis&nbsp;Naddef's&nbsp;greedy&nbsp;grower:</tt></dd>
+<dd><tt>&nbsp;1.&nbsp;&nbsp;Denis&nbsp;only&nbsp;adds&nbsp;nodes&nbsp;to&nbsp;the&nbsp;step.&nbsp;&nbsp;Greedy&nbsp;can&nbsp;delete&nbsp;nodes.</tt></dd>
+<dd><tt>&nbsp;2.&nbsp;&nbsp;Denis&nbsp;selects&nbsp;any&nbsp;improving&nbsp;move.&nbsp;&nbsp;Greedy&nbsp;selects&nbsp;the&nbsp;most</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;improving&nbsp;move.</tt></dd>
+<dd><tt>&nbsp;3.&nbsp;&nbsp;Denis&nbsp;has&nbsp;several&nbsp;methods&nbsp;of&nbsp;selecting&nbsp;a&nbsp;worsening&nbsp;move.</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Greedy&nbsp;selects&nbsp;the&nbsp;least&nbsp;worsening&nbsp;move.</tt></dd>
+<dd><tt>&nbsp;4.&nbsp;&nbsp;Denis&nbsp;continues&nbsp;until&nbsp;a&nbsp;cut&nbsp;<&nbsp;target&nbsp;is&nbsp;found,&nbsp;or&nbsp;until</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;badmoves&nbsp;worsening&nbsp;moves&nbsp;have&nbsp;been&nbsp;made.&nbsp;&nbsp;The&nbsp;best&nbsp;cut&nbsp;seen</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;during&nbsp;the&nbsp;process&nbsp;is&nbsp;returned.&nbsp;&nbsp;Greedy&nbsp;continues&nbsp;until</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at&nbsp;least&nbsp;forced_moves&nbsp;moves&nbsp;have&nbsp;been&nbsp;made,&nbsp;and&nbsp;at&nbsp;least</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bad_moves&nbsp;worsening&nbsp;moves&nbsp;have&nbsp;been&nbsp;made,&nbsp;and&nbsp;until&nbsp;there&nbsp;are</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no&nbsp;more&nbsp;improving&nbsp;moves&nbsp;available.&nbsp;&nbsp;Greedy&nbsp;returns&nbsp;the&nbsp;final</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cut.</tt></dd>
+<dd><tt>&nbsp;5.&nbsp;&nbsp;Greedy&nbsp;supports&nbsp;fixed&nbsp;nodes.</tt></dd>
+<a NAME="CCcombs_find_blocks"></a>
+<h2>CCcombs_find_blocks</h2>
+<dt>File:</dt>
+<dd><tt>COMBS/block.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>combs.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCcombs_find_blocks&nbsp;(int&nbsp;ncount,&nbsp;int&nbsp;ecount,&nbsp;int&nbsp;*elist,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;double&nbsp;*x,&nbsp;int&nbsp;*nblocks,&nbsp;int&nbsp;**blockcnts,&nbsp;int&nbsp;***blocks,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*ncutnodes,&nbsp;int&nbsp;**cutnodes)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>RETURNS&nbsp;the&nbsp;2-connected&nbsp;components&nbsp;of&nbsp;the&nbsp;graph&nbsp;specified&nbsp;by&nbsp;the</tt></dd>
+<dd><tt>&nbsp;edgeset</tt></dd>
+<dd><tt>&nbsp;-ncount&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;nodes</tt></dd>
+<dd><tt>&nbsp;-ecount&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;edges</tt></dd>
+<dd><tt>&nbsp;-elist&nbsp;is&nbsp;the&nbsp;edge&nbsp;list&nbsp;in&nbsp;node&nbsp;node&nbsp;format</tt></dd>
+<dd><tt>&nbsp;-x&nbsp;is&nbsp;an&nbsp;vector&nbsp;of&nbsp;length&nbsp;ecount&nbsp;(it&nbsp;can&nbsp;be&nbsp;NULL);&nbsp;if&nbsp;it&nbsp;is&nbsp;not</tt></dd>
+<dd><tt>&nbsp;&nbsp;NULL,&nbsp;then&nbsp;the&nbsp;blocks&nbsp;components&nbsp;will&nbsp;be&nbsp;for&nbsp;the&nbsp;graph&nbsp;consisting</tt></dd>
+<dd><tt>&nbsp;&nbsp;of&nbsp;the&nbsp;edges&nbsp;e&nbsp;with&nbsp;epsilon&nbsp;<&nbsp;x_e&nbsp;<&nbsp;1&nbsp;-&nbsp;epsilon</tt></dd>
+<dd><tt>&nbsp;-nblocks&nbsp;will&nbsp;return&nbsp;the&nbsp;number&nbsp;of&nbsp;blocks&nbsp;(it&nbsp;can&nbsp;be&nbsp;NULL)</tt></dd>
+<dd><tt>&nbsp;-blockcnts&nbsp;with&nbsp;return&nbsp;the&nbsp;size&nbsp;of&nbsp;the&nbsp;blocks&nbsp;(it&nbsp;can&nbsp;be&nbsp;NULL)</tt></dd>
+<dd><tt>&nbsp;-blocks&nbsp;will&nbsp;return&nbsp;the&nbsp;members&nbsp;of&nbsp;the&nbsp;blocks&nbsp;(it&nbsp;can&nbsp;be&nbsp;NULL)</tt></dd>
+<dd><tt>&nbsp;-ncutnodes&nbsp;with&nbsp;return&nbsp;the&nbsp;number&nbsp;of&nbsp;cutnodes&nbsp;(it&nbsp;can&nbsp;be&nbsp;NULL)</tt></dd>
+<dd><tt>&nbsp;-cutnodes&nbsp;will&nbsp;return&nbsp;the&nbsp;cutnodes&nbsp;(it&nbsp;can&nbsp;be&nbsp;NULL)</tt></dd>
+</body>
+</html>

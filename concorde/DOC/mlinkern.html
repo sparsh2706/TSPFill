@@ -1,0 +1,37 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>Concorde mlinkern.h functions</title>
+</head>
+<body>
+<center><h1>Concorde mlinkern.h functions</h1></center>
+<h2><a href="concorde_org.html">Organizational index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_funcs.html">Function index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_prog.html">Program index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_macro.html">Macro index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_types.html">Data Types index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+</h2><a NAME="CCedgegen_mlinkern"></a>
+<h2>CCedgegen_mlinkern</h2>
+<dt>File:</dt>
+<dd><tt>EDGEGEN/mlinkern.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>mlinkern.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CCedgegen_mlinkern&nbsp;(int&nbsp;ncount,&nbsp;CCdatagroup&nbsp;*dat,&nbsp;int&nbsp;wantlist,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*ecount,&nbsp;int&nbsp;**elist,&nbsp;CCkdtree&nbsp;*kt,&nbsp;int&nbsp;iterations,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;CCrandstate&nbsp;*rstate)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>COMPUTES&nbsp;the&nbsp;edge&nbsp;set&nbsp;of&nbsp;union&nbsp;of&nbsp;Chained&nbsp;Lin-Kernighan&nbsp;matchings.</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;-ncount&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;nodes&nbsp;in&nbsp;the&nbsp;graph</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;-dat&nbsp;gives&nbsp;the&nbsp;data&nbsp;to&nbsp;generate&nbsp;edge&nbsp;lengths</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;-if&nbsp;wantlist&nbsp;is&nbsp;nonzero,&nbsp;then&nbsp;the&nbsp;edgeset&nbsp;will&nbsp;be&nbsp;returned</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;-ecount&nbsp;will&nbsp;return&nbsp;the&nbsp;number&nbsp;of&nbsp;edges&nbsp;found&nbsp;(if&nbsp;wantlist)</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;-elist&nbsp;will&nbsp;return&nbsp;the&nbsp;matching&nbsp;in&nbsp;end&nbsp;end&nbsp;format&nbsp;(if&nbsp;wantlist)</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;-kt&nbsp;is&nbsp;a&nbsp;pointer&nbsp;to&nbsp;a&nbsp;kd-tree</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;-iterations&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;Chained&nbsp;LK&nbsp;kicks&nbsp;matchings</tt></dd>
+<dd><tt></tt></dd>
+<dd><tt>NOTES:</tt></dd>
+<dd><tt>&nbsp;&nbsp;Code&nbsp;is&nbsp;only&nbsp;set&nbsp;up&nbsp;for&nbsp;norms&nbsp;of&nbsp;CC_KD_NORM_TYPE.</tt></dd>
+</body>
+</html>

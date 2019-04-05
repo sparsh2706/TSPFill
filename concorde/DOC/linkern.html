@@ -1,0 +1,125 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>Concorde linkern.h functions</title>
+</head>
+<body>
+<center><h1>Concorde linkern.h functions</h1></center>
+<h2><a href="concorde_org.html">Organizational index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_funcs.html">Function index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_prog.html">Program index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_macro.html">Macro index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="concorde_types.html">Data Types index</a>&nbsp;&nbsp;&nbsp;&nbsp;
+</h2><a NAME="CClinkern_tour"></a>
+<h2>CClinkern_tour</h2>
+<dt>File:</dt>
+<dd><tt>LINKERN/linkern.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>linkern.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClinkern_tour&nbsp;(int&nbsp;ncount,&nbsp;CCdatagroup&nbsp;*dat,&nbsp;int&nbsp;ecount,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*elist,&nbsp;int&nbsp;stallcount,&nbsp;int&nbsp;repeatcount,&nbsp;int&nbsp;*incycle,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;*outcycle,&nbsp;double&nbsp;*val</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;silent,&nbsp;double&nbsp;time_bound,&nbsp;double&nbsp;length_bound,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;char&nbsp;*saveit_name,&nbsp;int&nbsp;kicktype,&nbsp;CCrandstate&nbsp;*rstate)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>RUNS&nbsp;Iterated&nbsp;Lin-Kernighan.</tt></dd>
+<dd><tt>-ncount&nbsp;(the&nbsp;number&nbsp;of&nbsp;nodes&nbsp;int&nbsp;the&nbsp;graph)</tt></dd>
+<dd><tt>-dat&nbsp;(coordinate&nbsp;dat)</tt></dd>
+<dd><tt>-ecount&nbsp;(the&nbsp;number&nbsp;of&nbsp;good&nbsp;edges&nbsp;-&nbsp;should&nbsp;not&nbsp;be&nbsp;0)</tt></dd>
+<dd><tt>-elist&nbsp;(the&nbsp;good&nbsp;edges&nbsp;in&nbsp;end1&nbsp;end2&nbsp;format)</tt></dd>
+<dd><tt>-stallcount&nbsp;(the&nbsp;max&nbsp;number&nbsp;of&nbsp;4-swaps&nbsp;without&nbsp;progress</tt></dd>
+<dd><tt>-repeatcount&nbsp;(the&nbsp;number&nbsp;of&nbsp;4-swap&nbsp;kicks)</tt></dd>
+<dd><tt>-incycle&nbsp;(a&nbsp;starting&nbsp;cycle,&nbsp;in&nbsp;node&nbsp;node&nbsp;node&nbsp;format&nbsp;-&nbsp;can&nbsp;be&nbsp;NULL)</tt></dd>
+<dd><tt>-outcycle&nbsp;(returns&nbsp;the&nbsp;cycle&nbsp;-&nbsp;can&nbsp;be&nbsp;NULL)</tt></dd>
+<dd><tt>-run_slightly&nbsp;(if&nbsp;nonzero,&nbsp;then&nbsp;very&nbsp;little&nbsp;info&nbsp;will&nbsp;be&nbsp;printed)</tt></dd>
+<dd><tt>-time_bound&nbsp;(if&nbsp;postive,&nbsp;then&nbsp;the&nbsp;search&nbsp;will&nbsp;stop&nbsp;after&nbsp;the&nbsp;kick</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;that&nbsp;puts&nbsp;the&nbsp;running&nbsp;time&nbsp;above&nbsp;this&nbsp;number&nbsp;of&nbsp;seconds)</tt></dd>
+<dd><tt>-length_bound&nbsp;(if&nbsp;postive,&nbsp;then&nbsp;the&nbsp;search&nbsp;will&nbsp;stop&nbsp;after&nbsp;the&nbsp;kick</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;that&nbsp;puts&nbsp;the&nbsp;tour&nbsp;at&nbsp;or&nbsp;below&nbsp;this&nbsp;length)</tt></dd>
+<dd><tt>-saveit_name&nbsp;(if&nbsp;non&nbsp;NULL&nbsp;then&nbsp;the&nbsp;tour&nbsp;will&nbsp;be&nbsp;saved&nbsp;to&nbsp;this&nbsp;file</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;after&nbsp;every&nbsp;10000&nbsp;kicks&nbsp;-&nbsp;if&nbsp;it&nbsp;has&nbsp;improved)</tt></dd>
+<dd><tt>-kicktype&nbsp;(specifies&nbsp;the&nbsp;type&nbsp;of&nbsp;kick&nbsp;used&nbsp;-&nbsp;should&nbsp;be&nbsp;one&nbsp;of</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;CC_LK_RANDOM_KICK,&nbsp;CC_LK_GEOMETRIC_KICK,&nbsp;or&nbsp;CC_LK_CLOSE_KICK)</tt></dd>
+<dd><tt></tt></dd>
+<dd><tt>NOTES:&nbsp;If&nbsp;incycle&nbsp;is&nbsp;NULL,&nbsp;then&nbsp;a&nbsp;random&nbsp;starting&nbsp;cycle&nbsp;is&nbsp;used.&nbsp;If</tt></dd>
+<dd><tt>&nbsp;outcycle&nbsp;is&nbsp;not&nbsp;NULL,&nbsp;then&nbsp;it&nbsp;should&nbsp;point&nbsp;to&nbsp;an&nbsp;array&nbsp;of&nbsp;length</tt></dd>
+<dd><tt>&nbsp;at&nbsp;least&nbsp;ncount.</tt></dd>
+<a NAME="CClinkern_flipper_init"></a>
+<h2>CClinkern_flipper_init</h2>
+<dt>File:</dt>
+<dd><tt>LINKERN/flip_two.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>linkern.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClinkern_flipper_init&nbsp;(CClk_flipper&nbsp;*f,&nbsp;int&nbsp;ncount,&nbsp;int&nbsp;*cyc)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>initializes&nbsp;flipper&nbsp;to&nbsp;an&nbsp;initial&nbsp;cycle&nbsp;given&nbsp;in&nbsp;cyc.</tt></dd>
+<dd><tt>returns&nbsp;0&nbsp;on&nbsp;success,&nbsp;nonzero&nbsp;on&nbsp;failure.</tt></dd>
+<a NAME="CClinkern_flipper_cycle"></a>
+<h2>CClinkern_flipper_cycle</h2>
+<dt>File:</dt>
+<dd><tt>LINKERN/flip_two.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>linkern.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CClinkern_flipper_cycle&nbsp;(CClk_flipper&nbsp;*F,&nbsp;int&nbsp;*x)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>places&nbsp;the&nbsp;current&nbsp;cycle&nbsp;in&nbsp;x.</tt></dd>
+<a NAME="CClinkern_flipper_finish"></a>
+<h2>CClinkern_flipper_finish</h2>
+<dt>File:</dt>
+<dd><tt>LINKERN/flip_two.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>linkern.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CClinkern_flipper_finish&nbsp;(CClk_flipper&nbsp;*F)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>frees&nbsp;up&nbsp;space&nbsp;allocated&nbsp;by&nbsp;CClinkern_flipper_init.</tt></dd>
+<dd><tt>every&nbsp;CClinkern_flipper_init&nbsp;should&nbsp;lead&nbsp;to&nbsp;a</tt></dd>
+<dd><tt>CClinkern_flipper_finish&nbsp;call.</tt></dd>
+<a NAME="CClinkern_flipper_next"></a>
+<h2>CClinkern_flipper_next</h2>
+<dt>File:</dt>
+<dd><tt>LINKERN/flip_two.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>linkern.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClinkern_flipper_next&nbsp;(CClk_flipper&nbsp;*f,&nbsp;int&nbsp;x)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>returns&nbsp;the&nbsp;successor&nbsp;to&nbsp;x&nbsp;in&nbsp;the&nbsp;current&nbsp;cycle.</tt></dd>
+<a NAME="CClinkern_flipper_prev"></a>
+<h2>CClinkern_flipper_prev</h2>
+<dt>File:</dt>
+<dd><tt>LINKERN/flip_two.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>linkern.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClinkern_flipper_prev&nbsp;(CClk_flipper&nbsp;*f,&nbsp;int&nbsp;x)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>returns&nbsp;the&nbsp;predecessor&nbsp;of&nbsp;x&nbsp;in&nbsp;the&nbsp;current&nbsp;cycle.</tt></dd>
+<a NAME="CClinkern_flipper_flip"></a>
+<h2>CClinkern_flipper_flip</h2>
+<dt>File:</dt>
+<dd><tt>LINKERN/flip_two.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>linkern.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>void&nbsp;CClinkern_flipper_flip&nbsp;(CClk_flipper&nbsp;*F,&nbsp;int&nbsp;x,&nbsp;int&nbsp;y)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>flips&nbsp;the&nbsp;portion&nbsp;of&nbsp;the&nbsp;cycle&nbsp;from&nbsp;x&nbsp;to&nbsp;y&nbsp;(inclusive).</tt></dd>
+<a NAME="CClinkern_flipper_sequence"></a>
+<h2>CClinkern_flipper_sequence</h2>
+<dt>File:</dt>
+<dd><tt>LINKERN/flip_two.c</tt></dd>
+<dt>Header:</dt>
+<dd><tt>linkern.h</tt></dd>
+<dt>Prototype:</dt>
+<dd><tt>int&nbsp;CClinkern_flipper_sequence&nbsp;(CClk_flipper&nbsp;*f,&nbsp;int&nbsp;*&nbsp;x,&nbsp;int&nbsp;y,</tt></dd>
+<dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;z)</tt></dd>
+<dt>Description:</dt>
+<dd><tt>returns&nbsp;1&nbsp;if&nbsp;xyz&nbsp;occur&nbsp;as&nbsp;an&nbsp;increasing&nbsp;subsequence&nbsp;of&nbsp;the&nbsp;cycle,</tt></dd>
+<dd><tt>returns&nbsp;0&nbsp;otherwise.</tt></dd>
+</body>
+</html>
