@@ -1,0 +1,15 @@
+<svg width="900" height="900" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  
+    <path id="path1" d="M100,200 C100,100 400,100 400,200"/>
+    
+    <path class="SamplePath" id="path2" d="M100,500 C25,400 475,400 400,500"/>
+  
+    <path class="SamplePath" id="path3" d="M100,800 C175,700 325,700 400,800"/>
+  
+    <path class="SamplePath" id="path4" d="M600,200 C675,100 975,100 900,200"/>
+  
+    <path class="SamplePath" id="path5" d="M600,500 C600,350 900,650 900,500"/>
+  
+    <path class="SamplePath" id="path6" d="M600,800 C625,700 725,700 750,800 S875,900 900,800"/>
+    
+</svg>

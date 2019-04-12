@@ -1,0 +1,14 @@
+body {
+    padding: 10pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Helvetica, sans-serif;
+    color: blue;
+}
+
+code {
+    font-family: monospace;
+    background-color: #FFFF99;
+    color: #990000;
+}

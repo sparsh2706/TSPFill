@@ -1,21 +1,33 @@
-import sys
-sys.path.remove('/opt/ros/kinetic/lib/python2.7/dist-packages')
-
-import cv2 as cv2
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+import re
 
-def rgb2gray()
+# Last and First Co-ordinate is same
 
-im = cv2.imread("ryan.jpg")
-im_black = cv2.rgb2gray(im)
-imshow(im_black)
-input()
-pixels = np.argwhere(im == 255)
-print(len(pixels))
+file = open('star.txt','r')
+x = []
+y = []
+lines = file.readlines()
+length = 0
+
+for line in lines:
+	list_point = line.split(',')
+	length = len(list_point)
+
+i=0
+while(i<length):
+	x.append(list_point[i])
+	i+=1
+	if(i>=length):
+		break
+	y.append(list_point[i])
+	i+=1
+
+# Change from str list to int list
+x = [int(i) for i in x]
+y = [int(i) for i in y]
 
 
-x,y,z = pixels.T
-
-plt.scatter(x,y)
-plt.show() 
+plt.plot(x,y)
+plt.show()	
+file.close()

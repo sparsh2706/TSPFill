@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="style.css" />
+        <title>InkscapeMap Help</title>
+    </head>
+    <body>
+
+
+    <h1>InkscapeMap 0.10.0</h1>
+
+    <h2>What does this software do?</h2>
+    <p>InkscapeMap can open SVG files, and in particular <em>Inkscape</em> generated files
+        (see <a href="http://www.inkscape.org">http://www.inkscape.org</a>).
+        It can then extract coordinates from shapes in the SVG and save these information in an HTML imagemap
+        or plain text file.
+    </p>
+
+    <h2>Limitations</h2>
+    <ul>
+        <li>Don't scale/translate/mirror shapes. Transformations are not yet supported</li>
+        <li>The paths should be composed only by straight lines and Bezier curves. Elliptical arcs are not supported.</li>
+        <li>If the path is open, the tool will close it</li>
+        <li>It's easier to identify shapes in the interface if all the shape in the
+            SVG have a label or an id (which you can set in the property windows of Inkscape).</li>
+    </ul>
+
+    <h1>How to use</h1>
+    <ol>
+        <li>Open an SVG file via <code>File→Open</code></li>
+        <li>The software will load the file and extract paths information</li>
+        <li>Un-check in the table the shapes you don't want to be included in the output file</li>
+        <li>Set some property on the shapes:
+            <ul>
+                <li>Double click in the <code>HREF</code> and <code>Additional text</code>
+                    cells to add text on a single shape (<code>HREF</code> will be used only
+                    in HTML imagemaps)</li>
+                <li>Change the <code>Segments</code> value for circles and Bezier curves
+                    to fine tune the approximation</li>
+            </ul>
+        </li>
+        <li>Choose either <code>File→Save as HTML imagemap</code> or <code>File→Save
+            as coordinates</code> to save these information to a file</li>
+    </ol>
+
+    <h1>Bugs, suggestions, contacts</h1>
+    <p>You can post bug reports and suggestions in the project forum at the
+        <a href="https://sourceforge.net/projects/inkscapemap/">SourceForge page</a></p>
+
+    <h1>Change log</h1>
+    <dl>
+        <dt>0.10.0</dt>
+        <dd>Added support for Bezier curves, rounded rectangles, circles, ellipses</dd>
+
+        <dt>0.9</dt>
+        <dd>Added support for rectangles. Added about screen and updated help. Output size now truncated to integer values.</dd>
+
+        <dt>0.8</dt>
+        <dd>Ability to change output size. Support for H, h, V, v (horizontal and vertical coordinate specifications) in paths</dd>
+
+        <dt>0.7</dt>
+        <dd>Added relative points support, UTF-8 output, improved implicit "move/line to command" support, added parse logs. Imporoved support for SVG 1.1/Inkscape 0.48.</dd>
+    </dl>
+
+</body>
+</html>
