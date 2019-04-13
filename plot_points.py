@@ -36,9 +36,10 @@ def tspPlot(pts_file,opt_file):
 	path_file.writelines(oline)
 	path_file.close()
 
+	# This was specifically used for function since import name was a string and it was directly looking for the variable name as the Python File
 	opt_module = importlib.import_module(opt_file)
 
-	list_opt = opt_module.list_opt[:-1] #Last Point is the Very First Point
+	list_opt = opt_module.list_opt[:-1] # Last Point is the Very First Point
 	list_opt = list(map(int, list_opt))
 
 
